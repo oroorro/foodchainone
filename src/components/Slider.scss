@@ -1,0 +1,57 @@
+.sliderSection{
+    display: flex;
+    
+    align-items: center;
+    /*justify-content: center;*/
+    
+    width: 100%;
+    
+
+    .rowContainer{
+        display: flex;
+        /*
+        align-items: center;
+        justify-content: center;
+        */
+        height: 810px;
+        flex-wrap: nowrap;
+        max-height: calc(100vh - 96px);
+        
+
+        .contentContainer{
+            flex-shrink: 1;
+            display: flex;
+            max-width: 630px;
+            flex-direction: column;
+            order: 1;
+            width: 50%;
+
+            .buttonContainer{
+                display: flex;
+            }
+        }
+
+
+        .imgContainer{
+            display: block;
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            order: 2;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+
+            img{
+                max-width: 100%;
+                display: block;
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                object-fit: cover;
+                overflow-clip-margin: content-box;
+                overflow: clip;
+            }
+        }
+    }
+}

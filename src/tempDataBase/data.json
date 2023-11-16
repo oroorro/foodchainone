@@ -1,0 +1,73 @@
+{
+
+    "homeSliderData": 
+    [
+        {
+            "title":"Feels Good to Be Fiery",
+            "description": "Our Sweet + Spicy Chicken Pita is back for a limited time!",
+            "buttonText": "Order now",
+            "imageSrc": "01_WebHH_FA23_Pita_Comp_1620x1620__1_.avif"
+        },
+        {
+            "title":"Sweet, fiery satisfaction",
+            "description": "New Spicy Falafel lights up every forkful with fire-roasted jalapeños, harissa + fresh herbs.",
+            "buttonText": "Let’s get bold",
+            "imageSrc": "01_WebHH_SP234_SpiceyFalafel.avif"
+        },
+        {
+            "title": "DOUSE ON EVERYTHING, REGRET NOTHING",
+            "description": "Make every bite mouthwatering with sweet-tart Balsamic Date Vinaigrette.",
+            "buttonText": "Get drizzling",
+            "imageSrc": "02_WebHH_FA23_BalsDressing_1620x1620.avif"
+        }
+    ],
+    "sliderData": 
+    [
+        {
+            "pre": "Back in season",
+            "title": "BALSAMIC DATE CHICKEN",
+            "description": "Get cozy with grilled chicken, eggplant dip, red pepper hummus, fire-roasted corn, balsamic date vinaigrette, and more."
+        },
+        {
+            "pre": "Limited-time only",
+            "title": "Sweet + Spicy Chicken Pita",
+            "description": "Go bold with harissa honey chicken paired with balsamic date vinaigrette. Plus fresh tzatziki, tomato + onion, pickles, romaine."
+        },
+        {
+            "pre": "Bold, balanced heat",
+            "title": "Market Spice Bowl",
+            "description": "Dig into mouthwatering layers of spicy falafel, fiery broccoli, pickled onions, hummus, skhug, garlic dressing, rice, and more."
+        }
+    ],
+
+    "productData": 
+    {
+
+        "BALSAMIC DATE CHICKEN":
+        {
+            "title": "BALSAMIC DATE CHICKEN",
+            "calorie": 645, 
+            "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
+        },
+        "MARKET SPICE":
+        {
+            "title": "MARKET SPICE",
+            "calorie": 945, 
+            "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, skhug, garlic dressing, more."
+        },
+        "HARISSA AVOCADO":
+        {
+            "title": "HARISSA AVOCADO",
+            "calorie": 845, 
+            "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
+        },
+        "Chicken + RightRice®":
+        {
+            "title": "Chicken + RightRice®",
+            "calorie": 750, 
+            "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
+        }
+    }
+
+    
+}

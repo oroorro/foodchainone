@@ -1,0 +1,90 @@
+ul{
+    list-style: none;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    position: relative;
+    color: black;
+    padding: 0.2em 0;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  a:hover::after,
+    a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+    }
+
+
+
+header{
+
+    display: flex;
+    align-items: flex-end;
+    gap: 150px;
+    justify-content: center; 
+    border-bottom: 1px solid black;
+
+    .leftMenu{
+        display: flex;
+        gap: 20px;
+    }
+
+    .rightMenu{
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+    
+        button{
+            border-style: none;
+        }
+    
+        .signInButton{
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            gap: 5px;
+    
+            span{
+               display: inline-block;
+               font-size: 15px;
+            }
+        }
+        
+        .shoppingBagButton{
+            height: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+.orderButton{
+    position: relative;
+    top: 5px;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    span{
+        font-size: 15px;
+    }
+}

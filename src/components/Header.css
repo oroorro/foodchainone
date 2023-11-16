@@ -1,0 +1,18 @@
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.signInButton{
+    width: 80px;
+    height: 30px;
+    border-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
