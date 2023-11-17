@@ -36,38 +36,72 @@
         {
             "pre": "Bold, balanced heat",
             "title": "Market Spice Bowl",
+            "imageSrc":"balsamic-date-chicken_20231023_web.avif",
             "description": "Dig into mouthwatering layers of spicy falafel, fiery broccoli, pickled onions, hummus, skhug, garlic dressing, rice, and more."
         }
     ],
 
-    "productData": 
+    "popularProductData": 
     {
 
         "BALSAMIC DATE CHICKEN":
         {
             "title": "BALSAMIC DATE CHICKEN",
             "calorie": 645, 
+            "imageSrc": "balsamic-date-chicken_20231023_web.avif",
             "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
         },
         "MARKET SPICE":
         {
             "title": "MARKET SPICE",
             "calorie": 945, 
+            "imageSrc": "harissa_avocado-220606-web.avif",
             "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, skhug, garlic dressing, more."
         },
         "HARISSA AVOCADO":
         {
             "title": "HARISSA AVOCADO",
             "calorie": 845, 
+            "imageSrc": "market-spice-bowl_20231023_web.avif",
             "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
         },
-        "Chicken + RightRice®":
+        "Greek Salad":
         {
-            "title": "Chicken + RightRice®",
-            "calorie": 750, 
-            "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
+            "title": "Greek Salad",
+            "calorie": 600, 
+            "imageSrc": "chicken_rightrice-220606-web.avif",
+            "description": "Grilled chicken, hummus, tzatziki, feta, cucumber, tomato, Kalamata olives, romaine, arugula, and vinaigrette."
+        },
+        "TAHINI CAESAR":
+        {
+            "title": "TAHINI CAESAR",
+            "calorie": 550, 
+            "imageSrc": "tahini_caesar-220606-web.avif",
+            "description": "Grilled chicken, hummus, pita crisps, pickled onions, feta, romaine, arugula, Tahini Caesar dressing."
         }
-    }
 
+
+        
+    },
+
+    "PITA":
+    [
+        {
+            "title":"SWEET + SPICY CHICKEN",
+            "calorie": 740,
+            "description": "Harissa honey chicken meets balsamic date vinaigrette. Plus, tzatziki, tomato + onion, pickles, romaine."
+        },
+        {
+            "title": "CRISPY FALAFEL",
+            "calorie": 955,
+            "description": "Falafel, hummus, roasted eggplant, pickles, cabbage slaw, tomato + onion, garlic dressing, skhug."
+        },
+        {
+            "title": "SPICY CHICKEN + AVOCADO",
+            "calorie": 1030,
+            "description": "Harissa honey chicken, Crazy Feta®, hummus, avocado, pickles, corn, pickled onions, hot harissa vinaigrette."
+        }
+
+    ]
     
 }

@@ -28,15 +28,17 @@ export default function Slider(props){
                     <p>
                         {props.data.description}
                     </p>
-                    <button>{props.data.buttonText}</button>
+                    <a>{props.data.buttonText}</a>
 
-                    <div className="buttonContainer">
-                        <button onClick={()=>handleLeft()}>
-                            <BsArrowLeftCircle/>
-                        </button>
-                        <button onClick={()=>handleRight()}>
-                            <BsArrowRightCircle/>
-                        </button>
+                    <div>
+                        <div className="buttonContainer">
+                            <button onClick={()=>handleLeft()}>
+                                <BsArrowLeftCircle/>
+                            </button>
+                            <button onClick={()=>handleRight()}>
+                                <BsArrowRightCircle/>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
