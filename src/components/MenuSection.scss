@@ -1,0 +1,10 @@
+.menuSection{
+    width: 100%;
+    display: flex;
+
+    .gridMenu{
+        display: grid;
+        grid-template-columns: repeat(3, 150px);
+       
+    }
+}

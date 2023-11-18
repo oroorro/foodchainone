@@ -79,29 +79,160 @@
             "imageSrc": "tahini_caesar-220606-web.avif",
             "description": "Grilled chicken, hummus, pita crisps, pickled onions, feta, romaine, arugula, Tahini Caesar dressing."
         }
-
-
-        
     },
 
-    "PITA":
-    [
-        {
-            "title":"SWEET + SPICY CHICKEN",
-            "calorie": 740,
-            "description": "Harissa honey chicken meets balsamic date vinaigrette. Plus, tzatziki, tomato + onion, pickles, romaine."
-        },
-        {
-            "title": "CRISPY FALAFEL",
-            "calorie": 955,
-            "description": "Falafel, hummus, roasted eggplant, pickles, cabbage slaw, tomato + onion, garlic dressing, skhug."
-        },
-        {
-            "title": "SPICY CHICKEN + AVOCADO",
-            "calorie": 1030,
-            "description": "Harissa honey chicken, Crazy Feta®, hummus, avocado, pickles, corn, pickled onions, hot harissa vinaigrette."
-        }
 
-    ]
+
+    "product":{
+        "BOWL":
+        [
+            {
+                "title": "BALSAMIC DATE CHICKEN",
+                "calorie": 645, 
+                "imageSrc": "balsamic-date-chicken_20231023_web.avif",
+                "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
+            },
+           
+            {
+                "title": "MARKET SPICE",
+                "calorie": 945, 
+                "imageSrc": "harissa_avocado-220606-web.avif",
+                "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, skhug, garlic dressing, more."
+            },
+           
+            {
+                "title": "HARISSA AVOCADO",
+                "calorie": 845, 
+                "imageSrc": "market-spice-bowl_20231023_web.avif",
+                "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
+            },
+           
+            {
+                "title": "Greek Salad",
+                "calorie": 600, 
+                "imageSrc": "chicken_rightrice-220606-web.avif",
+                "description": "Grilled chicken, hummus, tzatziki, feta, cucumber, tomato, Kalamata olives, romaine, arugula, and vinaigrette."
+            },
+            
+            {
+                "title": "TAHINI CAESAR",
+                "calorie": 550, 
+                "imageSrc": "tahini_caesar-220606-web.avif",
+                "description": "Grilled chicken, hummus, pita crisps, pickled onions, feta, romaine, arugula, Tahini Caesar dressing."
+            },
     
+            {
+                "title": "CHICKEN + RIGHTRICE®",
+                "calorie": 750, 
+                "imageSrc": "chicken_rightrice-220606-web.avif",
+                "description": "Built on a base of high-protein RightRice® with grilled chicken, tzatziki, hummus, feta, tomato, arugula, more."
+            },
+            {
+                "title": "GREENS + GRAINS BOWL",
+                "calorie": "360-1495", 
+                "imageSrc": "byo-greens-grains-bowl_20220927_web.avif",
+                "description": "Mix and match your favorite greens and grains to build a bowl just the way you like it."
+            },
+            {
+                "title": "GREENS + GRAINS BOWL",
+                "calorie": "360-1495", 
+                "imageSrc": "byo-salad-bowl_20220927_web.avif",
+                "description": "Mix an"
+            },
+            {
+                "title": "GREENS + GRAINS BOWL",
+                "calorie": "360-1495", 
+                "imageSrc": "byo-grains-bowl_20220927_web.avif",
+                "description": "Mix an"
+            }
+        ],
+    
+        "PITA":
+        [
+            {
+                "title":"SWEET + SPICY CHICKEN",
+                "calorie": 740,
+                "imageSrc": "spicy_lamb_meatball-220606-web.avif",
+                "description": "Harissa honey chicken meets balsamic date vinaigrette. Plus, tzatziki, tomato + onion, pickles, romaine."
+                
+            },
+            {
+                "title": "CRISPY FALAFEL",
+                "calorie": 955,
+                "imageSrc": "crispy_falafel-220606-web.avif",
+                "description": "Falafel, hummus, roasted eggplant, pickles, cabbage slaw, tomato + onion, garlic dressing, skhug."
+            },
+            {
+                "title": "SPICY CHICKEN + AVOCADO",
+                "calorie": 1030,
+                "imageSrc": "spicy_chicken_avocado-220606-web.avif",
+                "description": "Harissa honey chicken, Crazy Feta®, hummus, avocado, pickles, corn, pickled onions, hot harissa vinaigrette."
+            },
+            {
+                "title":"SPICY LAMB MEATBALL",
+                "calorie": 865,
+                "imageSrc": "sweet-n-spicy-chicken_20231023_web.avif",
+                "description":"Lamb meatballs, hummus, tomato + cucumber, pickled onions, cabbage slaw, pickles, garlic dressing, skhug."
+            },
+            {
+                "title":"GREEK CHICKEN",
+                "calorie":895,
+                "imageSrc":"greek_chicken-220606-web.avif",
+                "description": "Grilled chicken, hummus, tzatziki, pickles, tomato + onion, olives, feta, shredded romaine, Greek Vinaigrette."
+            },
+            {
+                "title":"PITA",
+                "calorie": "540-1610",
+                "imageSrc": "byo-pita_220606_web.avif",
+                "description": "Fill our fluffy and perfectly chewy pita with your unique combo of ingredients. Made with sprouted grains."
+            }
+        ],
+        
+        "DRINK":
+        [
+            {
+                "title":"PINEAPPLE APPLE MINT",
+                "calorie": 100,
+                "imageSrc": "pineapple-apple-mint_220606_web.avif",
+                "description": "This super refreshing juice is made in-house with pineapple, apple cider, fresh mint, and lime juice."
+            },
+            {
+                "title": "BLUEBERRY LAVENDER",
+                "calorie": 130,
+                "imageSrc": "blueberry-lavender_220606_web.avif",
+                "description": "Made in-house from a purée of blueberries and lavender."
+            },
+            {
+                "title": "CUCUMBER MINT LIME",
+                "calorie": 170,
+                "imageSrc": "cucumber-mint-lime_220606_web.avif",
+                "description": "A cure to any midday slump. Sweet and refreshing, balanced out with fresh lime juice. Made in-house."
+            },
+            {
+                
+                "title": "SPINDRIFT LEMON",
+                "calorie": 3,
+                "imageSrc": "spindrift-lemon_220606_web.avif",
+                "description": "Sparkling lemon water that tastes like the real thing—because it is! There's real lemon juice in each can."
+            },
+            {
+                "title": "KID'S MILK",
+                "calorie": 110,
+                "imageSrc": "milk-220606-web.avif",
+                "description": "Organic 1% milk."
+            }
+        ],
+    
+        "KIDMENU":
+        [
+            {
+                "title": "KID'S MILK",
+                "calorie": "505-1210",
+                "imageSrc": "kids-meal_220606_web.avif",
+                "description": "A mini version of our build-your-own pita with a side of pita chips or carrots sticks. Choose milk or juice."
+            }
+        ]
+    }
+
+
 }

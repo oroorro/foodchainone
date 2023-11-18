@@ -9,7 +9,6 @@
 main{
     display: flex;
     flex-direction: column;
-    
 }
 
 .home{
@@ -18,10 +17,14 @@ main{
 
 .popularListSection{
     display: block;
-    max-width: 1040px;
+    position: relative;
+    //max-width: 1040px;
+    width: 250%;
+    //max-height: 200px;
     .popularPorductContainer{
         display: flex;
         flex-direction: row;
         max-height: calc(100vh - 136px);
+        
     }
 }
