@@ -3,16 +3,19 @@ import './MenuSection.scss';
 export default function MenuSection(props){
 
 
+    //console.log("menu", props.title);
     const products = props.data.map((productData) =>(
-        <ProductModal imgTitle={props.title} data={productData}/>
+        <ProductModal             build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
     return(
-        <section className={`${props.title}Section menuSection`}>
+        <div className="menuSectionDiv">
+        <section id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
             <h2> {props.title}</h2>
             <div className="gridMenu">
             {products}
             </div>
         </section>
+        </div>
     )
 } 

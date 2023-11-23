@@ -1,0 +1,167 @@
+
+/*
+.cateringNav{
+   height: 80px;
+}
+
+.cateringNav>div>div{
+    float:left;
+}
+
+.cateringNav>div>div:nth-child(1){
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.cateringNavContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cateringNavContainer>ul{
+    display: block;
+}
+
+.cateringNavContainer>ul>li{
+    float:left;
+}
+*/
+
+
+/*
+.cateringNav{
+   height: 80px;
+}
+
+.logoWrapper{
+    float:left;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+
+.cateringNavContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cateringNavContainer>ul{
+    display: block;
+}
+
+.cateringNavContainer>ul>li{
+    float:left;
+}
+*/
+.cateringNav{
+    height: 80px;
+ }
+ 
+ .cateringNav>div>:nth-child(1){
+     float:left;
+ }
+ 
+ .cateringNav>div>div:nth-child(1){
+     padding-left: 20px;
+     padding-top: 20px;
+ }
+ 
+ .cateringNavContainer{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .cateringNavContainer>ul{
+     display: block;
+ }
+ 
+ .cateringNavContainer>ul>li{
+     float:left;
+ }
+
+
+
+ .orderFirstSection{
+    width: 100%;
+    display: block;
+    
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .choosingContainer{
+        width: 100%;
+        height: 400px;
+
+        text-align: center;
+
+        .decisionContainer{
+            width: 50%;
+            margin: auto;
+
+            div{
+                padding-top: 30px;
+            }
+
+            .pickupContainer{
+                float: left;
+                width: 50%;
+                button{
+                    display: block;
+                    width: 200px;
+                    height: 140px;
+                }
+            }
+
+            .orderContainer{
+                width: 50%;
+                float: left;
+                button{
+                    width: 150px;
+                    height: 80px;
+                    float: left;
+                }
+
+                span{
+                    float: left;
+                }
+
+                small{
+                    float: left;
+                }
+            }
+        }
+    }
+ }
+
+
+ .cateringSection{
+
+    .address{
+        span{
+            float: left;
+        }
+        div{
+            float: left;
+            &:after{
+                display: table;
+                content: "";
+            }
+            &:before{
+                display: table;
+                content: "";
+            }
+        }
+
+        
+    }
+
+    table{
+        display: none;
+    }
+ }

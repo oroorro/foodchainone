@@ -11,7 +11,7 @@ export default function Header(){
             <li><Link to="/">Mealz</Link></li>
             <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/rewards">Rewards</Link></li>
-            <li><Link to="/rewards">Catering</Link></li>
+            <li><Link to="/catering">Catering</Link></li>
             <li><Link to="/rewards">Locations</Link></li>
         </ul>
       

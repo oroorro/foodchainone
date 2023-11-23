@@ -232,7 +232,72 @@
                 "description": "A mini version of our build-your-own pita with a side of pita chips or carrots sticks. Choose milk or juice."
             }
         ]
+    },
+
+    "build":{
+        "GREENS":
+        [
+            {
+                "title": "Arugula",
+                "calorie": 20,
+                "imageSrc": "arugula-220606.avif"
+            },
+            {
+                "title": "SuperGreens",
+                "calorie": 40,
+                "imageSrc": "super_greens-220606.avif"
+            },
+            {
+                "title": "Baby Spinach",
+                "calorie": 20,
+                "imageSrc": "baby_spinach-220606.avif"
+            },
+            {
+                "title": "Romaine",
+                "calorie": 20,
+                "imageSrc": "romaine-220606.avif"
+            },
+            {
+                "title": "SplendidGreens®",
+                "calorie": 20,
+                "imageSrc": "splendid_greens-220606.avif"
+            }
+        ],
+        
+
+        "DIPS + SPREADS":
+        [
+            {
+                "title": "Tzatziki",
+                "calorie": 35,
+                "imageSrc": "tzatziki-220606.avif"
+            },
+            {
+                "title": "Traditional Hummus",
+                "calorie": 45,
+                "imageSrc": "hummus-220606.avif"
+            },
+            {
+                "title": "Crazy Feta®",
+                "calorie": 70,
+                "imageSrc": "crazy_feta-220606.avif"
+            },
+            {
+                "title": "Harissa",
+                "calorie": 70,
+                "imageSrc": "harissa-220606.avif"
+            },
+            {
+                "title": "Red Pepper Hummus",
+                "calorie": 30,
+                "imageSrc": "red_pepper_hummus-220606.avif"
+            },
+            {
+                "title": "Roasted Eggplant Dip",
+                "calorie": 50,
+                "imageSrc": "roasted_eggplant_dip-220606.avif"
+            }
+        ]
+
     }
-
-
 }
