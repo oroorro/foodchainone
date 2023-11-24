@@ -12,6 +12,9 @@ export default function Builder(){
     const title = useSelector(state => state.slice.orders);
     console.log(title);
 
+    const queue = useSelector(state => state.slice.testObj.testTwo);
+    console.log(queue);
+
     const menu = Object.keys(data.build).map((productName)=>(
         <MenuSection build={true} title={productName} data={data.build[productName]}/>
     ))

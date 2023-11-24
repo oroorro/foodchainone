@@ -5,7 +5,11 @@ export const slice = createSlice({
   initialState: {
     orders: {},
     queue:[],
-    
+    test: null,
+    testObj:{
+      testOne: null,
+      testTwo: null,
+    }
     //productTitle: null,
     //produtCalorie: null
   },
@@ -25,11 +29,16 @@ export const slice = createSlice({
         }
         
     },
+
+    setQueue:(state,action)=>{
+      state.testObj.testOne = action.payload.h2;
+
+    },
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setClickedProduct } = slice.actions
+export const { setClickedProduct,setQueue } = slice.actions
 
 export default slice.reducer
