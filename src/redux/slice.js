@@ -9,7 +9,8 @@ export const slice = createSlice({
     testObj:{
       testOne: null,
       testTwo: null,
-    }
+    },
+    deletedOrder: {},
     //productTitle: null,
     //produtCalorie: null
   },
@@ -31,14 +32,20 @@ export const slice = createSlice({
     },
 
     setQueue:(state,action)=>{
-      state.testObj.testOne = action.payload.h2;
+      //state.testObj.testThree = action.payload.h2;
+      state.queue.push(action.payload.order)
+    },
 
+    //add to deleted order and filter orderList to exclude deleted item
+    addDeleteOrder:(state, action)=>{
+      state.deletedOrder[action.payload.title] = action.payload.category;
+      state.queue = state.queue.filter((order) => (order.title != action.payload.title));
     },
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setClickedProduct,setQueue } = slice.actions
+export const { setClickedProduct,setQueue, addDeleteOrder } = slice.actions
 
 export default slice.reducer

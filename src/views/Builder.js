@@ -2,18 +2,19 @@ import data from '../tempDataBase/data.json'
 import Header from '../components/Header';
 import MenuSection from '../components/MenuSection';
 import { useSelector } from 'react-redux';
-
+import OrderList from '../components/OrderList';
 import './Builder.scss';
 
 
 export default function Builder(){
 
-    
+    /*
     const title = useSelector(state => state.slice.orders);
     console.log(title);
 
-    const queue = useSelector(state => state.slice.testObj.testTwo);
+    const queue = useSelector(state => state.slice.testObj.testThree);
     console.log(queue);
+    */
 
     const menu = Object.keys(data.build).map((productName)=>(
         <MenuSection build={true} title={productName} data={data.build[productName]}/>
@@ -31,6 +32,7 @@ export default function Builder(){
                 <ul></ul>
                 <hr></hr>
                 <a>Add to bag</a>
+                <OrderList/>
             </div>
             
         </section>
