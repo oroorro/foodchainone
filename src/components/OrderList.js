@@ -17,6 +17,7 @@ export default function OrderList(){
     function deleteOrder(fromTitle,fromCategory){
         //console.log("deleting order..", fromTitle,fromCategory);
         dispatch(addDeleteOrder({category: fromCategory, title: fromTitle}));
+        
     }
 
 

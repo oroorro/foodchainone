@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const slice = createSlice({
   name: 'counter',
   initialState: {
+    orderId:0,
     orders: {},
     queue:[],
     test: null,
@@ -20,6 +21,7 @@ export const slice = createSlice({
         //state.productTitle = action.payload.title;
         //state.produtCalorie = action.payload.calorie;
         const order = {
+            productId: action.payload.id,
             productTitle:  action.payload.title,
             produtCalorie: action.payload.calorie
         }
@@ -28,7 +30,7 @@ export const slice = createSlice({
         }else{
             state.orders[action.payload.category] = [order];
         }
-        
+        state.orderId++;
     },
 
     setQueue:(state,action)=>{

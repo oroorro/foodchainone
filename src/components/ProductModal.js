@@ -6,11 +6,13 @@ import { useState, useEffect } from 'react';
 export default function ProductModal(props){
 
 
+    const [id, setId] = useState(null);
     const [clicked, setClicked] = useState(false);
     const dispatch = useDispatch();
     //console.log("what is it? ", props.data.category);
     const deletedOrder = useSelector(state => state.slice.deletedOrder[props.data.title]);
-    
+    const orderId = useSelector(state => state.orderId);
+
     useEffect(() => {
 
         if(deletedOrder){
@@ -25,10 +27,13 @@ export default function ProductModal(props){
 
         //check orders to see if user has reached limit of selections
         //orders
-        dispatch(setClickedProduct({category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
+        console.log("orderId", orderId);
+        
+        dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
         dispatch(setQueue(
             {order:
                 {
+                    id: orderId,
                     title: props.data.title,
                     calorie: props.data.calorie,
                     category: props.imgTitle.toLowerCase()
@@ -36,6 +41,7 @@ export default function ProductModal(props){
             }
         ));
         setClicked(prevState => !prevState);
+        setId(orderId);
     }
 
 
