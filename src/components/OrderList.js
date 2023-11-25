@@ -14,10 +14,10 @@ export default function OrderList(){
     //reading in queue
     const orderQueue = useSelector(state => state.slice.queue);
 
-    function deleteOrder(fromTitle,fromCategory){
+    function deleteOrder(deleteId){
         //console.log("deleting order..", fromTitle,fromCategory);
-        dispatch(addDeleteOrder({category: fromCategory, title: fromTitle}));
-        
+        //dispatch(addDeleteOrder({deleteId: fromCategory, title: fromTitle, id: deleteId}));
+        dispatch(addDeleteOrder({id: deleteId}));
     }
 
 
@@ -25,7 +25,7 @@ export default function OrderList(){
       
         <div>
             <div>{order.title}</div>
-            <button onClick={()=>deleteOrder(order.title, order.category)}>delete</button>
+            <button onClick={()=>deleteOrder(order.id)}>delete</button>
         </div>
     ));
 

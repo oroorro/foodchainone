@@ -11,7 +11,8 @@ export const slice = createSlice({
       testOne: null,
       testTwo: null,
     },
-    deletedOrder: {},
+    deletedOrder: null,
+    //deletedOrder: {},
     //productTitle: null,
     //produtCalorie: null
   },
@@ -40,8 +41,9 @@ export const slice = createSlice({
 
     //add to deleted order and filter orderList to exclude deleted item
     addDeleteOrder:(state, action)=>{
-      state.deletedOrder[action.payload.title] = action.payload.category;
-      state.queue = state.queue.filter((order) => (order.title != action.payload.title));
+      //state.deletedOrder[action.payload.title] = action.payload.category;
+      state.deletedOrder = action.payload.id;
+      state.queue = state.queue.filter((order) => (order.id != action.payload.id));
     },
     
   },

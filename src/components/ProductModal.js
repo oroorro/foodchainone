@@ -11,7 +11,7 @@ export default function ProductModal(props){
     const dispatch = useDispatch();
     //console.log("what is it? ", props.data.category);
     const deletedOrder = useSelector(state => state.slice.deletedOrder[props.data.title]);
-    const orderId = useSelector(state => state.orderId);
+    const orderId = useSelector(state => state.slice.orderId);
 
     useEffect(() => {
 
