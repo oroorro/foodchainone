@@ -45,11 +45,15 @@ export const slice = createSlice({
       //state.deletedOrder = action.payload.id;
       state.queue = state.queue.filter((order) => (order.id != action.payload.id));
     },
+
+    DeleteOrderFromProduct:(state, action)=>{
+      state.queue = state.queue.filter((order) => (order.id != action.payload.id));
+    },
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setClickedProduct,setQueue, addDeleteOrder } = slice.actions
+export const { setClickedProduct,setQueue, addDeleteOrder, DeleteOrderFromProduct } = slice.actions
 
 export default slice.reducer

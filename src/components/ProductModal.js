@@ -1,6 +1,6 @@
 import './ProductModal.scss';
 import { useDispatch } from 'react-redux';
-import {setClickedProduct, setQueue} from '../redux/slice';
+import {setClickedProduct, setQueue, DeleteOrderFromProduct} from '../redux/slice';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 export default function ProductModal(props){
@@ -13,12 +13,17 @@ export default function ProductModal(props){
     const deletedOrder = useSelector(state => state.slice.deletedOrder[props.data.title]);
     const orderId = useSelector(state => state.slice.orderId);
 
+
+
+    useEffect(() => {
+        setId(orderId);
+    },[])
+
     useEffect(() => {
 
         if(deletedOrder){
             setClicked(prevState => !prevState);
         }
-
 
     },[deletedOrder])
 
@@ -29,19 +34,27 @@ export default function ProductModal(props){
         //orders
         console.log("orderId", orderId);
         
-        dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
-        dispatch(setQueue(
-            {order:
-                {
-                    id: orderId,
-                    title: props.data.title,
-                    calorie: props.data.calorie,
-                    category: props.imgTitle.toLowerCase()
+        if(!clicked){
+            dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
+            dispatch(setQueue(
+                {order:
+                    {
+                        id: orderId,
+                        title: props.data.title,
+                        calorie: props.data.calorie,
+                        category: props.imgTitle.toLowerCase()
+                    }
                 }
-            }
-        ));
+            ));
+        }
+        //if user click on hightlighted image, delete it from order list and remove highlight effect
+        else{
+            dispatch(DeleteOrderFromProduct({id: id}));
+
+        }
+        
         setClicked(prevState => !prevState);
-        setId(orderId);
+        
     }
 
 

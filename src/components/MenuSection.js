@@ -5,7 +5,7 @@ export default function MenuSection(props){
 
     //console.log("menu", props.title);
     const products = props.data.map((productData) =>(
-        <ProductModal             build={props.build} imgTitle={props.title} data={productData}/>
+        <ProductModal   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
     return(
