@@ -67,11 +67,34 @@ export default function ProductModal(props){
     // title refers to Product's title
     function handleClick(title){
 
+        let temp;
         if(props.selectedItem[title]){
-            props.selectedItem[title]++;
+            
+            
+            let value = props.selectedItem[title];
+            // temp = {
+            //     ...props.selectedItem,
+            //     title: value++,
+            // };
+          
+            // props.setSelectedItem(temp);
+
+            props.setSelectedItem((prevState)=>
+                ({
+                    ...prevState,
+                    [title]: value++,
+                })
+            );
+
+            // props.setSelectedItem(
+            //     {
+            //         ...props.selectedItem,
+            //         [title]: value++,
+            //     }
+            // );
             
         }else{
-            let temp;
+            
             if(props.rule == "half"){
                 temp = {
                     ...props.selectedItem,
