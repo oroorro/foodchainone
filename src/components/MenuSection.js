@@ -1,23 +1,40 @@
 import ProductModal from "./ProductModal";
 import './MenuSection.scss';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function MenuSection(props){
 
     //stores selected item from ProductModal's onClick
     const [selectedItem, setSelectedItem] = useState({});
+    const [rule, setRule] = useState({});
 
+    useEffect(()=>{
+        //check rules
+        console.log(props.rule);
+        setRule(props.rule);
+        console.log(rule);
+    },[])
 
-    //check rules
-    console.log(props.rule);
+    useEffect(()=>{
+
+        console.log(rule);
+        if(rule){
+            console.log(rule.portion);
+        }
+    },[rule])
+
+    
 
     function clickedOnItem(name){
+
+        console.log("clicked on ", name);
+        console.log(rule, props.rule);
         if(selectedItem[name]){
             selectedItem[name]++;
         }else{
             let temp;
-           
-            if(props.rule["portion"] == "half"){
+            console.log(rule);
+            if(rule["portion"] == "half"){
                 //selectedItem[name] = 0.5;
                 temp = {
                     ...selectedItem,
