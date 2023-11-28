@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import MenuSection from '../components/MenuSection';
 import { useSelector } from 'react-redux';
 import OrderList from '../components/OrderList';
+import { useLocation } from 'react-router-dom';
 import './Builder.scss';
 
 
@@ -16,8 +17,17 @@ export default function Builder(){
     console.log(queue);
     */
 
-    const menu = Object.keys(data.build).map((productName)=>(
-        <MenuSection build={true} title={productName} data={data.build[productName]}/>
+    const location = useLocation(); 
+
+    //read data.menu[location.state.replace(/[-]/g, " ")]
+    //need to send data.menu[location.state.replace(/[-]/g, " ")] same as categoryName
+    //by 
+
+    
+
+    const menu = Object.keys(data.build).map((categoryName)=>(
+        //console.log(data.menu[location.state.replace(/[-]/g, " ")], categoryName),
+        <MenuSection build={true} title={categoryName} data={data.build[categoryName]} rule={data.menu[location.state.replace(/[-]/g, " ")][categoryName]}/>
     ))
     return(
         <section className={'BuilderSection'}>
@@ -26,7 +36,7 @@ export default function Builder(){
             </div>
             <div className='selectedMenu'>
                 <a>Back to Menu</a>
-                <h3>GREEK SALAD</h3>
+                <h3>{location.state.replace(/[-]/g, " ")}</h3>
                 <span>$10.95 • 0 Cal</span>
                 <hr></hr>
                 <ul></ul>

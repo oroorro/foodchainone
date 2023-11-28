@@ -82,6 +82,34 @@
     },
 
 
+    "menu":{
+        "BALSAMIC DATE CHICKEN":{
+            
+                "Greens":{
+                    "limit": 2,
+                    "portion": "half"
+                    
+                },
+                "DIPS + SPREADS":{
+                    "limit": 3,
+                    "portion": "full"
+                }
+           
+        },
+        "HARISSA AVOCADO":{
+            
+                "GREENS":{
+                    "limit": 2,
+                    "portion": "full",
+                    "default": "SuperGreens"
+                },
+                "DIPS + SPREADS":{
+                    "limit": 2
+                }
+            
+        }
+    },
+
 
     "product":{
         "BOWL":

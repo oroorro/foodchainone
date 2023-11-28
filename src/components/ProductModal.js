@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 import {setClickedProduct, setQueue, DeleteOrderFromProduct} from '../redux/slice';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 export default function ProductModal(props){
 
-
+    const navigate = useNavigate();
     const [id, setId] = useState(null);
     const [clicked, setClicked] = useState(false);
     const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function ProductModal(props){
 
 
     function handleDispatch(){
+
 
         //check orders to see if user has reached limit of selections
         //orders
@@ -67,7 +69,8 @@ export default function ProductModal(props){
             <div className="productModalContainer">
 
                 <img src={require(`../images/build/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
-                    onClick={()=>handleDispatch()}
+                    //onClick={()=>handleDispatch()}
+                    onClick={()=>props.onClick(props.data.title)}
                     className={clicked ? 'imgClicked' : 'imgNotClicked'}
                 />
                 <h2 onClick={testQueue}>{props.data.title}</h2>
@@ -78,7 +81,11 @@ export default function ProductModal(props){
     else{
         return(
             <div className="productModalContainer">
-                <img src={require(`../images/home/product/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}/>
+                <img src={require(`../images/home/product/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
+                    
+                    onClick={()=>(console.log(props.data.title.replace(/\s/g, '-')),
+                        navigate(`/builder/${props.data.title.replace(/\s/g, '-')}`,  {state: props.data.title.replace(/\s/g, '-')}))}
+                />
                 <h2>{props.data.title}</h2>
                 <p>{props.data.calorie}</p>
                 <p>{props.data.description}</p>

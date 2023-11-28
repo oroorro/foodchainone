@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import MenuSection from '../components/MenuSection';
 import './Menu.scss';
 import {useState,useRef} from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function Menu(){
 

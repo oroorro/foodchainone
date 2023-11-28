@@ -1,11 +1,45 @@
 import ProductModal from "./ProductModal";
 import './MenuSection.scss';
+import { useState } from "react";
+
 export default function MenuSection(props){
+
+    //stores selected item from ProductModal's onClick
+    const [selectedItem, setSelectedItem] = useState({});
+
+
+    //check rules
+    console.log(props.rule);
+
+    function clickedOnItem(name){
+        if(selectedItem[name]){
+            selectedItem[name]++;
+        }else{
+            let temp;
+           
+            if(props.rule["portion"] == "half"){
+                //selectedItem[name] = 0.5;
+                temp = {
+                    ...selectedItem,
+                    [name]: 0.5,
+                };
+            }else{
+                //selectedItem[name] = 1;
+                temp = {
+                    ...selectedItem,
+                    [name]: 1,
+                };
+            }
+            setSelectedItem(temp);
+        }
+        console.log(selectedItem)
+    }
+    //connect to store and read deletedItem 
 
 
     //console.log("menu", props.title);
     const products = props.data.map((productData) =>(
-        <ProductModal   build={props.build} imgTitle={props.title} data={productData}/>
+        <ProductModal  onClick={clickedOnItem}   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
     return(
