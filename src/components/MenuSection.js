@@ -10,21 +10,18 @@ export default function MenuSection(props){
 
     useEffect(()=>{
         //check rules
-        console.log(props.rule);
+        //console.log(props.rule);
         setRule(props.rule);
-        console.log(rule);
+        //console.log(rule);
     },[])
 
+
     useEffect(()=>{
-
-        console.log(rule);
-        if(rule){
-            console.log(rule.portion);
+        if(Object.keys(selectedItem).length != 0){
+            console.log(selectedItem)
         }
-    },[rule])
-
-    
-
+    },[selectedItem])
+    /*
     function clickedOnItem(name){
 
         console.log("clicked on ", name);
@@ -51,12 +48,13 @@ export default function MenuSection(props){
         }
         console.log(selectedItem)
     }
+    */
     //connect to store and read deletedItem 
 
 
     //console.log("menu", props.title);
     const products = props.data.map((productData) =>(
-        <ProductModal  onClick={clickedOnItem}   build={props.build} imgTitle={props.title} data={productData}/>
+        <ProductModal  rule={rule} selectedItem={selectedItem} setSelectedItem={setSelectedItem}   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
     return(

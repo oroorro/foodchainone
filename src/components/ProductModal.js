@@ -64,13 +64,36 @@ export default function ProductModal(props){
         dispatch(setQueue({h2:props.data.title}));
     }
 
+    // title refers to Product's title
+    function handleClick(title){
+
+        if(props.selectedItem[title]){
+            props.selectedItem[title]++;
+            
+        }else{
+            let temp;
+            if(props.rule == "half"){
+                temp = {
+                    ...props.selectedItem,
+                    [title]: 0.5,
+                };
+            }else{
+                temp = {
+                    ...props.selectedItem,
+                    [title]: 1,
+                };
+            }
+            props.setSelectedItem(temp);
+        }
+    }
+
     if(props.build){
         return(
             <div className="productModalContainer">
 
                 <img src={require(`../images/build/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
                     //onClick={()=>handleDispatch()}
-                    onClick={()=>props.onClick(props.data.title)}
+                    onClick={()=>handleClick(props.data.title)}
                     className={clicked ? 'imgClicked' : 'imgNotClicked'}
                 />
                 <h2 onClick={testQueue}>{props.data.title}</h2>
