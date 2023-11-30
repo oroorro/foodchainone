@@ -8,6 +8,9 @@ export default function MenuSection(props){
     const [selectedItem, setSelectedItem] = useState({});
     const [rule, setRule] = useState({});
 
+
+
+    
     useEffect(()=>{
         //check rules
         //console.log(props.rule);
@@ -20,6 +23,7 @@ export default function MenuSection(props){
         if(Object.keys(selectedItem).length != 0){
             console.log(selectedItem)
         }
+        console.log("selectedItem state");
     },[selectedItem])
     /*
     function clickedOnItem(name){
@@ -52,8 +56,10 @@ export default function MenuSection(props){
     //connect to store and read deletedItem 
 
 
+   
+
     //console.log("menu", props.title);
-    const products = props.data.map((productData) =>(
+    let products = props.data.map((productData) =>(
         <ProductModal  rule={rule} selectedItem={selectedItem} setSelectedItem={setSelectedItem}   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
@@ -63,6 +69,7 @@ export default function MenuSection(props){
             <h2> {props.title}</h2>
             <div className="gridMenu">
             {products}
+          
             </div>
         </section>
         </div>

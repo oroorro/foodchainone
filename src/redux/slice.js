@@ -41,7 +41,7 @@ export const slice = createSlice({
 
     //add to deleted order and filter orderList to exclude deleted item
     addDeleteOrder:(state, action)=>{
-      state.deletedOrder[action.payload.title] = action.payload.category;
+      state.deletedOrder[action.payload.title] = action.payload.title; //problem
       //state.deletedOrder = action.payload.id;
       state.queue = state.queue.filter((order) => (order.id != action.payload.id));
     },
@@ -49,11 +49,18 @@ export const slice = createSlice({
     DeleteOrderFromProduct:(state, action)=>{
       state.queue = state.queue.filter((order) => (order.id != action.payload.id));
     },
+
+    //clears out state.deletedOrder Object
+    clearDeletedOrder:(state,action)=>{
+      for (let key in state.deletedOrder) {
+        delete state.deletedOrder[key];
+      }
+    }
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setClickedProduct,setQueue, addDeleteOrder, DeleteOrderFromProduct } = slice.actions
+export const { setClickedProduct,setQueue, addDeleteOrder, DeleteOrderFromProduct,clearDeletedOrder } = slice.actions
 
 export default slice.reducer
