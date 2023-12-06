@@ -2,6 +2,14 @@ import ProductModal from "./ProductModal";
 import './MenuSection.scss';
 import { useState, useEffect } from "react";
 
+// 
+// 
+// @props 
+//      .build:Bool, flag to indicate 
+//      .title:String, Key of data.build 
+//      .data:Object, value of data.build[categoryName:String]
+//      .rule:Object:{limit:String, portion:String}
+// 
 export default function MenuSection(props){
 
     //stores selected item from ProductModal's onClick

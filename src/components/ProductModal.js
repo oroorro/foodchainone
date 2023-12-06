@@ -4,13 +4,35 @@ import {setClickedProduct, setQueue, DeleteOrderFromProduct, clearDeletedOrder} 
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+
+
+
+
+
+
+
+/**
+ * 
+ * @param {*object} props represents 
+ *                  .rule 
+ *                  .selectedItem
+ *                  .setSelectedItem
+ *                  .productData = {
+ *                                  
+ * 
+ *                                  }
+ *  
+ * @returns 
+ */
 export default function ProductModal(props){
 
     const navigate = useNavigate();
     const [id, setId] = useState(null);
-    const [clicked, setClicked] = useState(false);
+
+    //numbers of click on image, it will be used to display on top of image
+    const [clicked, setClicked] = useState(0);
     const dispatch = useDispatch();
-    //console.log("what is it? ", props.data.category);
+
     const deletedOrderName = useSelector(state => state.slice.deletedOrder[props.data.title]);
     const orderId = useSelector(state => state.slice.orderId);
 
@@ -34,7 +56,7 @@ export default function ProductModal(props){
 
             console.log("deleting order from Product", props.selectedItem);
 
-            setClicked(prevState => !prevState);
+            setClicked(prevState => prevState + 1);
             //iterate props.selectedItem and find key that has same name as deletedOrderName
             Object.keys(props.selectedItem).forEach((itemName=>{
                 console.log("itemName", itemName, deletedOrderName);
@@ -59,10 +81,11 @@ export default function ProductModal(props){
 
 
 
-    // title refers to Product's title
+    // handles click events when user clicks on imgage
     function handleClick(title){
 
         let temp;
+        //when 
         if(props.selectedItem[title]){
             
             let value = props.selectedItem[title];
@@ -125,11 +148,14 @@ export default function ProductModal(props){
         return(
             <div className="productModalContainer">
 
-                <img src={require(`../images/build/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
-                    //onClick={()=>handleDispatch()}
-                    onClick={()=>handleClick(props.data.title)}
-                    className={clicked ? 'imgClicked' : 'imgNotClicked'}
-                />
+                <div>
+                    <div className='counter'></div>
+                    <img src={require(`../images/build/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
+                        //onClick={()=>handleDispatch()}
+                        onClick={()=>handleClick(props.data.title)}
+                        className={clicked ? 'imgClicked' : 'imgNotClicked'}
+                    />
+                </div>
                 <h2>{props.data.title}</h2>
                 <p>{props.data.calorie}</p>
             </div>
