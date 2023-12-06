@@ -7,23 +7,23 @@ import { useState, useEffect } from "react";
 // @props 
 //      .build:Bool, flag to indicate 
 //      .title:String, Key of data.build 
-//      .data:Object, value of data.build[categoryName:String]
-//      .rule:Object:{limit:String, portion:String}
+//      .data:Array[Object], 
+//      .rule:Object,{limit:String, portion:String}
 // 
 export default function MenuSection(props){
 
     //stores selected item from ProductModal's onClick
     const [selectedItem, setSelectedItem] = useState({});
+    //references rule:Object from Builder.js's prop.rule
     const [rule, setRule] = useState({});
 
 
 
     
     useEffect(()=>{
-        //check rules
-        //console.log(props.rule);
+        //console.log("props.data type is ", typeof(props.data), props.data instanceof Array, props.data instanceof Object );
+        //setting Object:{limit:String, portion:String} as rule
         setRule(props.rule);
-        //console.log(rule);
     },[])
 
 
@@ -66,8 +66,10 @@ export default function MenuSection(props){
 
    
 
-    //console.log("menu", props.title);
+    //@productData: Object:{title:String, calorie:Number, imageSrc:String}
     let products = props.data.map((productData) =>(
+        //@rule: Object:{limit:String, portion:String}  @selectedItem:useState  @setSelectedItem:setState
+        //@build: Bool  @imgTitle:String   @data: Object:{title:String, calorie:Number, imageSrc:String}
         <ProductModal  rule={rule} selectedItem={selectedItem} setSelectedItem={setSelectedItem}   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 

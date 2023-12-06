@@ -29,7 +29,7 @@ export default function Builder(){
     //@categoryName:String which represnets the name of Key of data.build 
     const menu = Object.keys(data.build).map((categoryName)=>(
         //@title:String, Key of data.build 
-        //@data:Object, value of data.build[categoryName:String]
+        //@data:Array[Object], value of data.build[categoryName:String]
         //@rule:Object:{limit:String, portion:String}
         //uses current route address with '-' exclusion.
         <MenuSection build={true} title={categoryName} data={data.build[categoryName]} rule={data.menu[location.state.replace(/[-]/g, " ")][categoryName]}/>
