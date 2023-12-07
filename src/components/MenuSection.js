@@ -1,7 +1,7 @@
 import ProductModal from "./ProductModal";
 import './MenuSection.scss';
 import { useState, useEffect } from "react";
-import CustomAlert from './CustomAlert';
+
 // 
 // This compnents holds a title, and it's products by givings props to ProductModal.js
 // @props 
@@ -11,18 +11,6 @@ import CustomAlert from './CustomAlert';
 //      .rule:Object,{limit:Number, portion:String}
 // 
 export default function MenuSection(props){
-
-
-    //handles alert modal
-    const [showAlert, setShowAlert] = useState(false);
-
-    const handleShowAlert = () => {
-        setShowAlert(true);
-    };
-
-    const handleCloseAlert = () => {
-        setShowAlert(false);
-    };
 
 
 
@@ -43,12 +31,22 @@ export default function MenuSection(props){
 
     useEffect(()=>{
 
-        //if(Object.keys(selectedItem).length > 0)  console.log("selectedItem state",Object.keys(selectedItem).length, rule.limit);
 
+        console.log("Menu ",selectedItem);
+
+        //if(Object.keys(selectedItem).length > 0)  console.log("selectedItem state",Object.keys(selectedItem).length, rule.limit);
+        setReachedLimitFlag(false);
         if(rule  &&  Object.keys(selectedItem).length > 0 && (Object.values(selectedItem).reduce((accum,curr)=> {return accum + curr}) == rule.limit)){
             console.log("reached limit in MenuSection",selectedItem)
             setReachedLimitFlag(true);
+
+         //rule has arrived, selectedItem can be empty but it is less than limit
         }
+        // else if(rule  &&  Object.keys(selectedItem).length >= 0 && (Object.values(selectedItem).reduce((accum,curr)=> {return accum + curr},0) < rule.limit)){
+           
+        // }
+
+       
         
     },[selectedItem])
     /*
@@ -98,17 +96,6 @@ export default function MenuSection(props){
             <div className="gridMenu">
             {products}
           
-            </div>
-
-            <div>
-                <button onClick={handleShowAlert}>Show Custom Alert</button>
-
-                {showAlert && (
-                    <CustomAlert
-                    message="This is a custom alert!"
-                    onClose={handleCloseAlert}
-                    />
-                )}
             </div>
         </section>
         </div>

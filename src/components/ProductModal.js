@@ -4,7 +4,7 @@ import {setClickedProduct, setQueue, DeleteOrderFromProduct, clearDeletedOrder} 
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import CustomAlert from './CustomAlert';
 
 
 
@@ -23,6 +23,19 @@ import { useNavigate } from "react-router-dom";
  *                  .reachedLimitFlag:Bool , indication to tell if the category of this product has reached a limit of selection.
  */
 export default function ProductModal(props){
+
+    //handles alert modal
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleShowAlert = () => {
+        setShowAlert(true);
+    };
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+    };
+
+
 
     const navigate = useNavigate();
     const [id, setId] = useState(null);
@@ -53,7 +66,7 @@ export default function ProductModal(props){
         //if order gets deleted, decrement that item in props.selectedItem
         if(deletedOrderName){
 
-            console.log("deleting order from Product", props.selectedItem);
+            console.log(`deleting order of ++${deletedOrderName}`, props.selectedItem);
 
             //delete given deletedOrderName from store in props.selectedItem
             //iterate props.selectedItem and find key that has same name as deletedOrderName
@@ -89,7 +102,7 @@ export default function ProductModal(props){
     // handles click events when user clicks on imgage
     function handleClick(title){
 
-
+        
 
         if(!props.reachedLimitFlag){
             let temp;
@@ -98,6 +111,8 @@ export default function ProductModal(props){
             if(props.selectedItem[title]){
                 
                 let value = props.selectedItem[title];
+                console.log("ProductModal", value, props.selectedItem[title]);
+                //not working 
                 props.setSelectedItem((prevState)=>
                     ({
                         ...prevState,
@@ -169,7 +184,8 @@ export default function ProductModal(props){
             //if current click is more than 0, make it back to 0 
 
             //if current click is 0, alert message "you can only select up to ${props.limit}"
-            console.log(`you can only select up to ${props.rule.limit}`);
+            
+            handleShowAlert();
         }
 
     }
@@ -188,6 +204,17 @@ export default function ProductModal(props){
                 </div>
                 <h2>{props.data.title}</h2>
                 <p>{props.data.calorie}</p>
+
+                <div>
+                
+
+                {showAlert && (
+                    <CustomAlert
+                    message={`you can only select up to ${props.rule.limit}`}
+                    onClose={handleCloseAlert}
+                    />
+                )}
+                </div>
             </div>
         )
     }
