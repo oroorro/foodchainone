@@ -55,15 +55,15 @@ export default function ProductModal(props){
 
             console.log("deleting order from Product", props.selectedItem);
 
-            
+            //delete given deletedOrderName from store in props.selectedItem
             //iterate props.selectedItem and find key that has same name as deletedOrderName
             Object.keys(props.selectedItem).forEach((itemName=>{
-                console.log("itemName", itemName, deletedOrderName);
+               
                 if(itemName == deletedOrderName){
-                    //props.selectedItem[itemName] - 1;
-
+                    
+                    //getting current quantity of deletedOrderName
                     let value = props.selectedItem[itemName] - 1;
-                    //console.log("value is ", value);
+                    //updating for deletedOrderName to have one less value
                     props.setSelectedItem((prevState)=>
                         ({
                             ...prevState,
@@ -72,10 +72,16 @@ export default function ProductModal(props){
                     );
                 }
             }))
-        }
 
-        //empty state.slice.deletedOrder
+        //update current ProductModal's clicked quantity.
+        setClicked(prevState => prevState - 1);
+
+        //empty state.slice.deletedOrder for future usage. 
         dispatch(clearDeletedOrder({}));
+
+        }
+        
+        
     },[deletedOrderName])
 
 
