@@ -1,23 +1,37 @@
 import ProductModal from "./ProductModal";
 import './MenuSection.scss';
 import { useState, useEffect } from "react";
-
+import CustomAlert from './CustomAlert';
 // 
 // This compnents holds a title, and it's products by givings props to ProductModal.js
 // @props 
 //      .build:Bool, flag to indicate 
 //      .title:String, Key of data.build 
 //      .data:Array[Object], 
-//      .rule:Object,{limit:String, portion:String}
+//      .rule:Object,{limit:Number, portion:String}
 // 
 export default function MenuSection(props){
+
+
+    //handles alert modal
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleShowAlert = () => {
+        setShowAlert(true);
+    };
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+    };
+
+
 
     //stores selected item from ProductModal's onClick
     const [selectedItem, setSelectedItem] = useState({});
     //references rule:Object from Builder.js's prop.rule
     const [rule, setRule] = useState({});
 
-
+    const [reachedLimitFlag, setReachedLimitFlag] = useState(false);
 
     
     useEffect(()=>{
@@ -28,10 +42,14 @@ export default function MenuSection(props){
 
 
     useEffect(()=>{
-        if(Object.keys(selectedItem).length != 0){
-            console.log(selectedItem)
+
+        //if(Object.keys(selectedItem).length > 0)  console.log("selectedItem state",Object.keys(selectedItem).length, rule.limit);
+
+        if(rule  &&  Object.keys(selectedItem).length > 0 && (Object.values(selectedItem).reduce((accum,curr)=> {return accum + curr}) == rule.limit)){
+            console.log("reached limit in MenuSection",selectedItem)
+            setReachedLimitFlag(true);
         }
-        console.log("selectedItem state");
+        
     },[selectedItem])
     /*
     function clickedOnItem(name){
@@ -68,9 +86,9 @@ export default function MenuSection(props){
 
     //@productData: Object:{title:String, calorie:Number, imageSrc:String}
     let products = props.data.map((productData) =>(
-        //@rule: Object:{limit:String, portion:String}  @selectedItem:useState  @setSelectedItem:setState
+        //@rule: Object:{limit:Number, portion:String}  @selectedItem:useState  @setSelectedItem:setState
         //@build: Bool  @imgTitle:String   @data: Object:{title:String, calorie:Number, imageSrc:String}
-        <ProductModal  rule={rule} selectedItem={selectedItem} setSelectedItem={setSelectedItem}   build={props.build} imgTitle={props.title} data={productData}/>
+        <ProductModal  reachedLimitFlag={reachedLimitFlag} rule={rule} selectedItem={selectedItem} setSelectedItem={setSelectedItem}   build={props.build} imgTitle={props.title} data={productData}/>
     ));
 
     return(
@@ -80,6 +98,17 @@ export default function MenuSection(props){
             <div className="gridMenu">
             {products}
           
+            </div>
+
+            <div>
+                <button onClick={handleShowAlert}>Show Custom Alert</button>
+
+                {showAlert && (
+                    <CustomAlert
+                    message="This is a custom alert!"
+                    onClose={handleCloseAlert}
+                    />
+                )}
             </div>
         </section>
         </div>

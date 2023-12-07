@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
  //                 .build: Bool
  //                 .imgTitle:String
  //                 .data: Object:{title:String, calorie:Number, imageSrc:String
- *  
+ *                  .reachedLimitFlag:Bool , indication to tell if the category of this product has reached a limit of selection.
  */
 export default function ProductModal(props){
 
@@ -89,77 +89,88 @@ export default function ProductModal(props){
     // handles click events when user clicks on imgage
     function handleClick(title){
 
-        let temp;
-        //icrementing by the given rules, props.rule
-        //if clicked Item was clicked already at least once, just increment
-        if(props.selectedItem[title]){
-            
-            let value = props.selectedItem[title];
-            props.setSelectedItem((prevState)=>
-                ({
-                    ...prevState,
-                    [title]: value++,
-                })
-            );
-        }
-        //if it is the first time of clikcing item, create a new entry into selectedItem;useState:Object
-        else{
-            if(props.rule == "half"){
-                temp = {
-                    ...props.selectedItem,
-                    [title]: 0.5,
-                };
-            }else{
-                temp = {
-                    ...props.selectedItem,
-                    [title]: 1,
-                };
+
+
+        if(!props.reachedLimitFlag){
+            let temp;
+            //icrementing by the given rules, props.rule
+            //if clicked Item was clicked already at least once, just increment
+            if(props.selectedItem[title]){
+                
+                let value = props.selectedItem[title];
+                props.setSelectedItem((prevState)=>
+                    ({
+                        ...prevState,
+                        [title]: value++,
+                    })
+                );
             }
-            props.setSelectedItem(temp);
-        }
+            //if it is the first time of clikcing item, create a new entry into selectedItem;useState:Object
+            else{
+                if(props.rule == "half"){
+                    temp = {
+                        ...props.selectedItem,
+                        [title]: 0.5,
+                    };
+                }else{
+                    temp = {
+                        ...props.selectedItem,
+                        [title]: 1,
+                    };
+                }
+                props.setSelectedItem(temp);
+            }
 
-        dispatch(setQueue(
-                    {order:
-                        {
-                            id: orderId,
-                            title: props.data.title,
-                            calorie: props.data.calorie,
-                            category: props.imgTitle.toLowerCase()
+            dispatch(setQueue(
+                        {order:
+                            {
+                                id: orderId,
+                                title: props.data.title,
+                                calorie: props.data.calorie,
+                                category: props.imgTitle.toLowerCase()
+                            }
                         }
-                    }
-        ));
+            ));
 
-        // if(!clicked){
-        //     dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
-        //     dispatch(setQueue(
-        //         {order:
-        //             {
-        //                 id: orderId,
-        //                 title: props.data.title,
-        //                 calorie: props.data.calorie,
-        //                 category: props.imgTitle.toLowerCase()
-        //             }
-        //         }
-        //     ));
-        // }
-        // //if user click on hightlighted image, delete it from order list and remove highlight effect
-        // else{
-        //     dispatch(DeleteOrderFromProduct({id: id}));
+            // if(!clicked){
+            //     dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
+            //     dispatch(setQueue(
+            //         {order:
+            //             {
+            //                 id: orderId,
+            //                 title: props.data.title,
+            //                 calorie: props.data.calorie,
+            //                 category: props.imgTitle.toLowerCase()
+            //             }
+            //         }
+            //     ));
+            // }
+            // //if user click on hightlighted image, delete it from order list and remove highlight effect
+            // else{
+            //     dispatch(DeleteOrderFromProduct({id: id}));
 
-        //     //delete item in parent's component 
-        //     //if value is 1, delete value completely from props.selectedItem
-        //     let value = props.selectedItem[props.data.title] - 1;
+            //     //delete item in parent's component 
+            //     //if value is 1, delete value completely from props.selectedItem
+            //     let value = props.selectedItem[props.data.title] - 1;
+                
+            //     props.setSelectedItem((prevState)=>
+            //         ({
+            //             ...prevState,
+            //             [props.data.title]: value,
+            //         })
+            //     );
+            // }
             
-        //     props.setSelectedItem((prevState)=>
-        //         ({
-        //             ...prevState,
-        //             [props.data.title]: value,
-        //         })
-        //     );
-        // }
-        
-        //setClicked(prevState => !prevState);
-        setClicked(prevState => prevState + 1);
+            //setClicked(prevState => !prevState);
+            setClicked(prevState => prevState + 1);
+        }
+        //reached limit for product selection 
+        else{
+            //if current click is more than 0, make it back to 0 
+
+            //if current click is 0, alert message "you can only select up to ${props.limit}"
+            console.log(`you can only select up to ${props.rule.limit}`);
+        }
 
     }
 
