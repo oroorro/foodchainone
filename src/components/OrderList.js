@@ -11,21 +11,22 @@ export default function OrderList(){
 
 
     const dispatch = useDispatch();
-    //reading in queue
+    //reading in the queue:Array[] from store
     const orderQueue = useSelector(state => state.slice.queue);
 
     function deleteOrder(deleteId, fromTitle, fromCategory){
         console.log("deleting order..", deleteId, fromTitle,fromCategory);
-        dispatch(addDeleteOrder({category: fromCategory, title: fromTitle, id: deleteId}));
+        dispatch(addDeleteOrder({category: fromCategory, title: fromTitle, index: deleteId}));
         //dispatch(addDeleteOrder({id: deleteId}));
     }
 
 
-    const orderList = orderQueue.map((order) =>(
+    //map queue:Array from store 
+    const orderList = orderQueue.map((order, index) =>(
       
         <div>
             <div>{order.title}</div>
-            <button onClick={()=>deleteOrder(order.id, order.title, order.category)}>delete</button>
+            <button onClick={()=>deleteOrder(index, order.title, order.category)}>delete</button>
         </div>
     ));
 

@@ -3,7 +3,7 @@ import './MenuSection.scss';
 import { useState, useEffect } from "react";
 
 // 
-// 
+// This compnents holds a title, and it's products by givings props to ProductModal.js
 // @props 
 //      .build:Bool, flag to indicate 
 //      .title:String, Key of data.build 

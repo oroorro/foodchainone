@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 
 /**
- * 
+ * MenuSection has <ProductModal>
  * @param props represents 
  //                 .rule: Object:{limit:String, portion:String}  
  //                 .selectedItem:useState  
@@ -84,6 +84,7 @@ export default function ProductModal(props){
     function handleClick(title){
 
         let temp;
+        //icrementing by the given rules, props.rule
         //if clicked Item was clicked already at least once, just increment
         if(props.selectedItem[title]){
             
@@ -110,6 +111,17 @@ export default function ProductModal(props){
             }
             props.setSelectedItem(temp);
         }
+
+        dispatch(setQueue(
+                    {order:
+                        {
+                            id: orderId,
+                            title: props.data.title,
+                            calorie: props.data.calorie,
+                            category: props.imgTitle.toLowerCase()
+                        }
+                    }
+        ));
 
         // if(!clicked){
         //     dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
