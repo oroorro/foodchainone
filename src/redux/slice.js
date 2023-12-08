@@ -8,11 +8,6 @@ export const slice = createSlice({
     orderId:0,
     orders: {},
     queue:[],
-    test: null,
-    testObj:{
-      testOne: null,
-      testTwo: null,
-    },
     //deletedOrder: null,
     deletedOrder: {},
     //productTitle: null,
@@ -22,28 +17,28 @@ export const slice = createSlice({
     
 
     //adds given order into state.orders based on it's exsitence. 
-    setClickedProduct: (state, action)=>{
+    // setClickedProduct: (state, action)=>{
       
-        const order = {
-            productId: action.payload.id,
-            productTitle:  action.payload.title,
-            produtCalorie: action.payload.calorie
-        }
+    //     const order = {
+    //         productId: action.payload.id,
+    //         productTitle:  action.payload.title,
+    //         produtCalorie: action.payload.calorie
+    //     }
 
-        //append to the category that the order belongs to
-        if(state.orders[action.payload.category]){
-            state.orders[action.payload.category].push(order);
-        }
-        //make a new array for category if the category did not exist
-        else{
-            state.orders[action.payload.category] = [order];
-        }
-        //increase global orderId
-        state.orderId++;
-    },
+    //     //append to the category that the order belongs to
+    //     if(state.orders[action.payload.category]){
+    //         state.orders[action.payload.category].push(order);
+    //     }
+    //     //make a new array for category if the category did not exist
+    //     else{
+    //         state.orders[action.payload.category] = [order];
+    //     }
+    //     //increase global orderId
+    //     state.orderId++;
+    // },
 
-    //add 
-    //@action:Object 
+    //add order into state.queue
+    //@action.payload.order:Object {id:Number, title:String, calorie:Number, category:String}
     setQueue:(state,action)=>{
       //state.testObj.testThree = action.payload.h2;
       state.queue.push(action.payload.order)
@@ -51,19 +46,17 @@ export const slice = createSlice({
 
     //add to deleted order and filter orderList to exclude deleted item
     addDeleteOrder:(state, action)=>{
-      state.deletedOrder[action.payload.title] = action.payload.title; //problem
-      //state.deletedOrder = action.payload.id;
-      //deleting every order by it's id 
-      //state.queue = state.queue.filter((order) => (order.id != action.payload.id));
-      //delete order in queue by given index 
-
+      //add deletedOrder
+      state.deletedOrder[action.payload.title] = action.payload.title;
      
       //delete given index's element;order:Object from queue
       state.queue.splice(action.payload.index, 1);
     },
 
+    //delete given order with given order's title 
+    //@action.payload.title:String, the title of an order
     DeleteOrderFromProduct:(state, action)=>{
-      state.queue = state.queue.filter((order) => (order.id != action.payload.id));
+      state.queue = state.queue.filter((order) => (order.title != action.payload.title));
     },
 
     //clears out state.deletedOrder Object

@@ -98,68 +98,35 @@ export default function ProductModal(props){
     },[deletedOrderName])
 
 
-
-    // handles click events when user clicks on imgage
+    // handles click events when user clicks on <img>
     function handleClick(title){
 
-        
-
-        //if(!props.reachedLimitFlag){
+        //did not reach limit yet
+        if(!props.reachedLimitFlag){
             let temp;
             //icrementing by the given rules, props.rule
             //if clicked Item was clicked already at least once, just increment
             if(props.selectedItem[title]){
                 
-
-                // let value =  props.selectedItem;
-                // console.log("before", value);
-                // value[title]++;
-                // console.log("after", value);
-
-
-                // props.setSelectedItem(value);
-                let value = props.selectedItem[title];
-                console.log("ProductModal", value, props.selectedItem[title]);
-                //not working 
-
-                //only one value case
+                //selectedItem's length is only one 
                 if(Object.values(props.selectedItem).length == 1){
-                    let temp = props.selectedItem[title];
+                    let temp = props.selectedItem[title] + 1;
 
                     props.setSelectedItem({
                         ...props.selectedItem,
-                        [title]: temp++
+                        [title]: temp
                     });
 
-                    
-                    // props.setSelectedItem({});
-                    // props.setSelectedItem({title:temp++});
-                    //props.setSelectedItem((propsselectedItem)=>(props.selectedItem[title]++));
-
-
-                }else{
-                    //does not work after 2 but why? 
-                    // props.setSelectedItem((prevState)=>
-                    // ({
-                    //     ...prevState,
-                    //     [title]: value++,
-                    // })
-                    // );
-
+                }
+                //selectedItem's length is more than one 
+                else{
                     let v = props.selectedItem[title] + 1;
-
                     temp = {
                         ...props.selectedItem,
                         [title]: v,
                     };
                     props.setSelectedItem(temp);
-
-
-                }
-
-
-
-                
+                }                
             }
             //if it is the first time of clikcing item, create a new entry into selectedItem;useState:Object
             else{
@@ -176,7 +143,7 @@ export default function ProductModal(props){
                 }
                 props.setSelectedItem(temp);
             }
-
+            //append order:Object into state.queue in store
             dispatch(setQueue(
                         {order:
                             {
@@ -188,46 +155,28 @@ export default function ProductModal(props){
                         }
             ));
 
-            // if(!clicked){
-            //     dispatch(setClickedProduct({id: orderId, category: props.imgTitle.toLowerCase(), title: props.data.title, calorie: props.data.calorie}))
-            //     dispatch(setQueue(
-            //         {order:
-            //             {
-            //                 id: orderId,
-            //                 title: props.data.title,
-            //                 calorie: props.data.calorie,
-            //                 category: props.imgTitle.toLowerCase()
-            //             }
-            //         }
-            //     ));
-            // }
-            // //if user click on hightlighted image, delete it from order list and remove highlight effect
-            // else{
-            //     dispatch(DeleteOrderFromProduct({id: id}));
-
-            //     //delete item in parent's component 
-            //     //if value is 1, delete value completely from props.selectedItem
-            //     let value = props.selectedItem[props.data.title] - 1;
-                
-            //     props.setSelectedItem((prevState)=>
-            //         ({
-            //             ...prevState,
-            //             [props.data.title]: value,
-            //         })
-            //     );
-            // }
-            
-            //setClicked(prevState => !prevState);
             setClicked(prevState => prevState + 1);
-        //}
+        }
         //reached limit for product selection 
-        // else{
-        //     //if current click is more than 0, make it back to 0 
+        else{
+            //if current click is 0, alert message "you can only select up to ${props.limit}"
+            if(clicked == 0){
+                handleShowAlert();
+            }
+            //if current click is more than 0, make it back to 0 
+            else{
+                //setting locally; <productModal>
+                setClicked(0);
+                //update <MenuSection>
+                props.setSelectedItem({
+                    ...props.selectedItem,
+                    [title]:0
+                })
+                //delete clicked Product from store's queue, which gets displayed in  <OrderList>
+                dispatch(DeleteOrderFromProduct({title: title}));
+            }
 
-        //     //if current click is 0, alert message "you can only select up to ${props.limit}"
-            
-        //     //handleShowAlert();
-        // }
+        }
 
     }
 
