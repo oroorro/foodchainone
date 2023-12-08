@@ -104,21 +104,62 @@ export default function ProductModal(props){
 
         
 
-        if(!props.reachedLimitFlag){
+        //if(!props.reachedLimitFlag){
             let temp;
             //icrementing by the given rules, props.rule
             //if clicked Item was clicked already at least once, just increment
             if(props.selectedItem[title]){
                 
+
+                // let value =  props.selectedItem;
+                // console.log("before", value);
+                // value[title]++;
+                // console.log("after", value);
+
+
+                // props.setSelectedItem(value);
                 let value = props.selectedItem[title];
                 console.log("ProductModal", value, props.selectedItem[title]);
                 //not working 
-                props.setSelectedItem((prevState)=>
-                    ({
-                        ...prevState,
-                        [title]: value++,
-                    })
-                );
+
+                //only one value case
+                if(Object.values(props.selectedItem).length == 1){
+                    let temp = props.selectedItem[title];
+
+                    props.setSelectedItem({
+                        ...props.selectedItem,
+                        [title]: temp++
+                    });
+
+                    
+                    // props.setSelectedItem({});
+                    // props.setSelectedItem({title:temp++});
+                    //props.setSelectedItem((propsselectedItem)=>(props.selectedItem[title]++));
+
+
+                }else{
+                    //does not work after 2 but why? 
+                    // props.setSelectedItem((prevState)=>
+                    // ({
+                    //     ...prevState,
+                    //     [title]: value++,
+                    // })
+                    // );
+
+                    let v = props.selectedItem[title] + 1;
+
+                    temp = {
+                        ...props.selectedItem,
+                        [title]: v,
+                    };
+                    props.setSelectedItem(temp);
+
+
+                }
+
+
+
+                
             }
             //if it is the first time of clikcing item, create a new entry into selectedItem;useState:Object
             else{
@@ -178,15 +219,15 @@ export default function ProductModal(props){
             
             //setClicked(prevState => !prevState);
             setClicked(prevState => prevState + 1);
-        }
+        //}
         //reached limit for product selection 
-        else{
-            //if current click is more than 0, make it back to 0 
+        // else{
+        //     //if current click is more than 0, make it back to 0 
 
-            //if current click is 0, alert message "you can only select up to ${props.limit}"
+        //     //if current click is 0, alert message "you can only select up to ${props.limit}"
             
-            handleShowAlert();
-        }
+        //     //handleShowAlert();
+        // }
 
     }
 
