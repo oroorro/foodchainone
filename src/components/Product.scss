@@ -15,6 +15,13 @@
     display: flex;
     flex-direction: column;
    
+    :nth-child(1){
+        div{
+            
+            display: float;
+        }
+    }
+
     img{
         object-fit: cover;
         width: 100%;

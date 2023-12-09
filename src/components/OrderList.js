@@ -7,6 +7,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {addDeleteOrder} from '../redux/slice';
+import './OrderList.scss';
+
 export default function OrderList(){
 
 
@@ -21,17 +23,19 @@ export default function OrderList(){
     }
 
 
-    //map queue:Array from store 
+    //map queue:Array[Object] from store 
     const orderList = orderQueue.map((order, index) =>(
-      
-        <div>
+    
+        //console.log("orderList:", order.title, order.category),
+        <div className='order'>
+            <img src={require(`../images/build/${order.category}/${order.title.toLowerCase().replace(/\s/g, '_')}-220606.avif`)}/>
             <div>{order.title}</div>
             <button onClick={()=>deleteOrder(index, order.title, order.category)}>delete</button>
         </div>
     ));
 
     return(
-        <div>
+        <div className='orderList'>
             {orderQueue && orderList}
         </div>
     )

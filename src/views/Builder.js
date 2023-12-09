@@ -39,7 +39,9 @@ export default function Builder(){
             <Header/>
         <section className={'BuilderSection'}>
             <div className='productMenu'>
-                {menu}
+                <div className='productwrapper'>
+                    {menu}
+                </div>
             </div>
             <div className='selectedMenu'>
                 <a>Back to Menu</a>
