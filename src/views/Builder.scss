@@ -1,6 +1,11 @@
 .BuilderSection{
     display: flex;
     width: 100%;
+
+    .productMenu{
+        width: 50%;
+    }
+
     .selectedMenu{
         display: flex;
         flex-direction: column;

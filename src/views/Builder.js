@@ -35,8 +35,10 @@ export default function Builder(){
         <MenuSection build={true} title={categoryName} data={data.build[categoryName]} rule={data.menu[location.state.replace(/[-]/g, " ")][categoryName]}/>
     ))
     return(
+        <div>
+            <Header/>
         <section className={'BuilderSection'}>
-            <div>
+            <div className='productMenu'>
                 {menu}
             </div>
             <div className='selectedMenu'>
@@ -51,5 +53,6 @@ export default function Builder(){
             </div>
             
         </section>
+        </div>
     )
 }

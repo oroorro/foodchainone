@@ -192,12 +192,13 @@ export default function ProductModal(props){
                         /*className={clicked ? 'imgClicked' : 'imgNotClicked'}*/
                     />
                 </div>
-                <h2>{props.data.title}</h2>
-                <p>{props.data.calorie}</p>
-
-                <div>
                 
-
+                <div>
+                    <p>{props.data.title}</p>
+                    <p>{props.data.calorie + " "}Cal</p>
+                </div>
+              
+                <div>
                 {showAlert && (
                     <CustomAlert
                     message={`you can only select up to ${props.rule.limit}`}

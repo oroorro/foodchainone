@@ -14,4 +14,15 @@
     .imgNotClicked{
         border-style: none;
     }
+
+    :nth-child(2){
+
+        text-align: center;
+        :nth-child(1){
+            margin-bottom: 0;
+        }
+        :nth-child(2){
+            margin:0;
+        }
+    }
 }
