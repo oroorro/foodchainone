@@ -64,12 +64,19 @@
     
             >button{
                 border-radius: 25px;
-                background: var(--lightblue);
                 height: 50px;
                 font-weight: bold;
                 font-size: medium;
                 width: 100%;
                 margin-top: 30px;
+            }
+
+            >.itemInBagExist{
+                background: var(--lightblue);
+            }
+
+            >.itemInBagDoesNotExist{
+                background: lightgrey; 
             }
         }
     }

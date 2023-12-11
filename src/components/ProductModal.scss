@@ -18,6 +18,7 @@
 
     .productWrapper{
         position: relative;
+
         .counterWrapper{
             display: block;
             width: 30px;
@@ -35,6 +36,11 @@
                 margin-top: 0;
             }
         }
+
+        .counterWrapperDoesNotExist{
+            display:none;
+        }
+
         img{
            
         }

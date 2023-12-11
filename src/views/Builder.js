@@ -6,9 +6,10 @@ import OrderList from '../components/OrderList';
 import { useLocation } from 'react-router-dom';
 import { HiMiniArrowSmallLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+
 import './Builder.scss';
 
-
+//represents /build page 
 export default function Builder(){
 
     /*
@@ -29,6 +30,8 @@ export default function Builder(){
     const navigate = useNavigate();
 
     
+    //orderQueue used for button's style ,will using useState be better? 
+    const orderQueue = useSelector(state => state.slice.queue);
 
 
     
@@ -61,7 +64,8 @@ export default function Builder(){
                     <div className='orderContainer'>
                         <OrderList/>
                     </div>
-                    <button>Add to bag</button>
+                    //two styles based on orderQueue
+                    <button className={`itemInBag` + (orderQueue.length === 0 ? 'DoesNotExist' : 'Exist')}>Add to bag</button>
                 </div>
             </div>
             
