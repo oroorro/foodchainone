@@ -92,7 +92,7 @@ export default function MenuSection(props){
     return(
         <div className="menuSectionDiv">
         <section id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
-            <h2> {props.title}</h2>
+            <h2 className="menuSectionTitle"> {props.title}</h2>
             <div className="gridMenu">
             {products}
           

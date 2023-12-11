@@ -184,15 +184,17 @@ export default function ProductModal(props){
         return(
             <div className="productModalContainer">
 
-                <div>
-                    <div className='counter'>{clicked}</div>
+                <div className='productWrapper'>
+                    <div className='counterWrapper'>
+                        <span>{clicked}</span>
+                    </div>
                     <img src={require(`../images/build/${props.imgTitle.toLowerCase()}/${props.data.imageSrc}`)}
                         //onClick={()=>handleDispatch()}
                         onClick={()=>handleClick(props.data.title)}
                         /*className={clicked ? 'imgClicked' : 'imgNotClicked'}*/
                     />
                 </div>
-                
+
                 <div>
                     <p>{props.data.title}</p>
                     <p>{props.data.calorie + " "}Cal</p>

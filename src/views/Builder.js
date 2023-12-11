@@ -4,6 +4,8 @@ import MenuSection from '../components/MenuSection';
 import { useSelector } from 'react-redux';
 import OrderList from '../components/OrderList';
 import { useLocation } from 'react-router-dom';
+import { HiMiniArrowSmallLeft } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 import './Builder.scss';
 
 
@@ -23,7 +25,11 @@ export default function Builder(){
     //need to send data.menu[location.state.replace(/[-]/g, " ")] same as categoryName
     //by 
 
+
+    const navigate = useNavigate();
+
     
+
 
     
     //@categoryName:String which represnets the name of Key of data.build 
@@ -44,14 +50,19 @@ export default function Builder(){
                 </div>
             </div>
             <div className='selectedMenu'>
-                <a>Back to Menu</a>
-                <h3>{location.state.replace(/[-]/g, " ")}</h3>
-                <span>$10.95 • 0 Cal</span>
-                <hr></hr>
-                <ul></ul>
-                <hr></hr>
-                <a>Add to bag</a>
-                <OrderList/>
+                <div>
+                    <a onClick={()=>navigate(`/menu`)}><HiMiniArrowSmallLeft size={20}/>Back to Menu</a>
+                    <h1>{location.state.replace(/[-]/g, " ")}</h1>
+                    <div className='orderInfoWrapper'>
+                        <span>$10.95</span>
+                        <span>222 Cal</span>
+                    </div>
+
+                    <div className='orderContainer'>
+                        <OrderList/>
+                    </div>
+                    <button>Add to bag</button>
+                </div>
             </div>
             
         </section>

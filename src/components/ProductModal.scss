@@ -8,12 +8,38 @@
 
     .imgClicked{
         border-radius: 9999px;
-        border: 2px solid yellow;
+        border: 2px solid rgb(255, 200, 0);
     }
 
     .imgNotClicked{
         border-style: none;
     }
+
+
+    .productWrapper{
+        position: relative;
+        .counterWrapper{
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 55px;
+            background-color: rgb(255, 200, 0);
+            position: absolute;
+            top:0px;
+            right: 10px;
+            z-index: 200;
+            text-align: center;
+           
+            span{
+                vertical-align: middle;
+                margin-top: 0;
+            }
+        }
+        img{
+           
+        }
+    }
+
 
     :nth-child(2){
 
