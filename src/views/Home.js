@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useState, useEffect} from 'react';
 import Product from '../components/Product';
 import './Home.scss';
+import Carousel from '../components/Carousel';
 
 export default function Home(){
 
@@ -30,6 +31,7 @@ export default function Home(){
 
             
             <Slider data={data.homeSliderData[curIdx]} curIdx={curIdx} setcurIdx={setcurIdx}/>
+            {/* <Carousel data={data.homeSliderData}/> */}
             <section className='popularListSection home' >
                 
                 <h1>WHAT'S POPULAR</h1>

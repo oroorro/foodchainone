@@ -1,34 +1,11 @@
-.sliderSection{
-    display: flex;
-    
-    align-items: center;
-    /*justify-content: center;*/
-    
-    width: 100%;
-    max-width: 120rem;
-    max-height: calc(100vh - 96px); //rowContainer exceed 
+.carouselSection{
 
-    /*
-    attempt on carousel
     white-space: nowrap;
     transition: transform 0.3s;
-    */
-    .rowContainer{
-        display: flex;
-        /*
-        align-items: center;
-        justify-content: center;
-        */
-        width: 100%;
-        flex-wrap: nowrap;
-        max-height: calc(100vh - 96px);
+    .carouselItem{
         height: 810px;
+        display: inline-flex;
 
-
-        //attempt on carousel
-        // display: inline-flex;
-        
-       
 
         .contentContainer{
             flex-shrink: 1;
@@ -82,4 +59,5 @@
             }
         }
     }
+
 }

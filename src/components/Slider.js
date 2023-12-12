@@ -1,7 +1,8 @@
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { BsArrowRightCircle } from "react-icons/bs";
 import './Slider.scss';
-//import image from '../images/home/slider';
+
+
 
 
 export default function Slider(props){
@@ -20,6 +21,7 @@ export default function Slider(props){
 
     return(
         <section className="sliderSection">
+            
             <div className="rowContainer">
                 <div className="contentContainer">
                     <h1>
