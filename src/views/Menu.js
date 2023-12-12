@@ -4,6 +4,7 @@ import MenuSection from '../components/MenuSection';
 import './Menu.scss';
 import {useState,useRef} from 'react';
 import { useNavigate } from "react-router-dom";
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 export default function Menu(){
 
@@ -44,9 +45,48 @@ export default function Menu(){
         <nav ref={navRef}  className={isFix ?'menuNavFixed' : `menuNav`}>
             <ul>
                 <li><a href={"#BOWLSection"}>Bowls</a></li>
+                <li><Link 
+                    activeClass="active" 
+                    to="BOWLSection" 
+                    spy={true} 
+                    smooth={true} 
+                    offset={0} 
+                    duration={500} 
+                   
+                    >
+                    Bowls
+                    </Link>
+                </li>
                 <li><a href={"#PITASection"}>Pitas</a></li>
-                <li><a href={"#DRINKSection"}>Drinks</a></li>
+                <li>
+                    <Link 
+                        activeClass="active" 
+                        to="DRINKSection" 
+                        spy={true} 
+                        smooth={true} 
+                        offset={-106} 
+                        duration={200} 
+                    
+                        >
+                        Drinks
+                    </Link>
+                
+                </li>
                 <li><a href={"#KIDMENUSection"}>Kid's meal</a></li>
+                <li>
+                <Link 
+                    activeClass="active" 
+                    to="KIDMENUSection" 
+                    spy={true} 
+                    smooth={true} 
+                    offset={-53} 
+                    duration={500} 
+                   
+                    >
+                    Kid's meal
+                </Link>
+
+                </li>
             </ul>
         </nav>
       

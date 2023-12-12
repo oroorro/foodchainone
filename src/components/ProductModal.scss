@@ -8,7 +8,9 @@
 
     .imgClicked{
         border-radius: 9999px;
-        border: 2px solid rgb(255, 200, 0);
+        // border: 2px solid rgb(255, 200, 0);
+        //box-shadow: 0 0 10px 5px rgba(255, 200, 0);
+        outline: 10px solid rgb(255, 200, 0);
     }
 
     .imgNotClicked{
@@ -26,14 +28,15 @@
             border-radius: 55px;
             background-color: rgb(255, 200, 0);
             position: absolute;
-            top:0px;
-            right: 10px;
+            top:-5px;
+            right: 5px;
             z-index: 200;
             text-align: center;
            
             span{
                 vertical-align: middle;
                 margin-top: 0;
+                font-weight: bold;
             }
         }
 

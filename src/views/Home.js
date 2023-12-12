@@ -28,16 +28,34 @@ export default function Home(){
         <Header/>
         <main>
 
-        
-        <Slider data={data.homeSliderData[curIdx]} curIdx={curIdx} setcurIdx={setcurIdx}/>
-        <section className='popularListSection home' >
             
-            <h1>WHAT'S POPULAR</h1>
-            <div className='popularPorductContainer'>
-                {popularListComponents}
-            </div>
-            
-        </section>
+            <Slider data={data.homeSliderData[curIdx]} curIdx={curIdx} setcurIdx={setcurIdx}/>
+            <section className='popularListSection home' >
+                
+                <h1>WHAT'S POPULAR</h1>
+                <div className='popularPorductContainer'>
+                    
+                </div>
+                
+            </section>
+            <section className='menuPromotion'>
+                <img 
+                width={"100%"}
+                height={711}
+                src={require("../images/home/home_section3_image.png")}
+                />
+                <div>
+                    <div className='textWrapper'>
+                        <h1>Apple Cider Vinaigrette </h1>
+                        <div>
+                            <p>refreshing and herb-infused dressing that pairs apple cider vinegar
+                            , ideal for autumn salads or drizzling over roasted root vegetables.
+                            </p>
+                        </div>
+                        <a><span>Try it now</span></a>
+                    </div>
+                </div>
+            </section>
         </main>
         </>
     )
