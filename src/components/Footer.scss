@@ -1,0 +1,26 @@
+.FooterContainer{
+    display: flex;
+    justify-content: center;
+    .FooterSection{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        .FooterListContainer{
+            list-style: none;
+            padding: 0px;
+            li{
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+
+
+
+
+.SOCIAL{
+    display: flex;
+    gap: 8px;
+}

@@ -6,6 +6,7 @@ import { useState, useEffect} from 'react';
 import Product from '../components/Product';
 import './Home.scss';
 import Carousel from '../components/Carousel';
+import Footer from '../components/Footer';
 
 export default function Home(){
 
@@ -36,7 +37,7 @@ export default function Home(){
                 
                 <h1>WHAT'S POPULAR</h1>
                 <div className='popularPorductContainer'>
-                    
+                    {popularListComponents}
                 </div>
                 
             </section>
@@ -58,6 +59,7 @@ export default function Home(){
                     </div>
                 </div>
             </section>
+            <Footer/>
         </main>
         </>
     )

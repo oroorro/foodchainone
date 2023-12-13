@@ -47,7 +47,8 @@
 
             h1{
                 font-size: 3.375rem;
-                
+                margin-top: 0px;
+                margin-bottom: 0px;
             }
 
             p{
@@ -64,7 +65,7 @@
         .imgContainer{
             display: block;
             flex-grow: 1;
-            width: 100%;
+            width: 50%;
             height: 100%;
             order: 2;
             aspect-ratio: 1/1;

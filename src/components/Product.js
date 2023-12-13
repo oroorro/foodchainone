@@ -10,7 +10,7 @@ export default function Product(props){
                     <img src={require(`../images/home/popular/${props.data.imageSrc}`)}/>
                     <h3>{props.data.title}</h3>
                     <p>{props.data.description}</p>
-                    <a>Order now</a>
+                    <a className='navigateToOrderButton'><span>Order now</span></a>
                 </div>
             )
         }else{

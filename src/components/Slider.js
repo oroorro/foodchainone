@@ -30,7 +30,7 @@ export default function Slider(props){
                     <p>
                         {props.data.description}
                     </p>
-                    <a>{props.data.buttonText}</a>
+                    <a className="navigateToOrderButton"><span>{props.data.buttonText}</span></a>
 
                     <div>
                         <div className="buttonContainer">
