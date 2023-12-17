@@ -8,7 +8,7 @@ export default function Header(){
     return(
     <header>
         <ul className='leftMenu'>
-            <li><Link to="/">Mealz</Link></li>
+            <li><Link to="/home" style={{fontWeight:"bold", fontSize:"x-large", paddingTop:"0px", top: "-2px"}}>Medi</Link></li>
             <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/rewards">Rewards</Link></li>
             <li><Link to="/catering">Catering</Link></li>

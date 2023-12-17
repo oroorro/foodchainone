@@ -1,6 +1,6 @@
 @media screen and (min-width: 1040px){
     body{
-        background-color: wheat;
+        background-color: #fffbee;
     }
     
 }
@@ -55,7 +55,7 @@ main{
             transform: translate(-50%,-50%);
             width: 100%; //adding padding will increase width? 
             top: 50%;
-            background-color: bisque;
+            background-color: var(--backgroundColor);
             padding: 20px;
             width: 75%;
             left: 50%;

@@ -95,7 +95,11 @@ const MenuSection = forwardRef (function MenuSection(props, refs){
         <div className="menuSectionDiv">
         
         <section  id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
-            <h3 className="menuSectionTitle"> {props.title}</h3>
+            <div className="menuSectionWrapper">
+                <h3 className="menuSectionTitle"> {props.title}</h3>
+
+            </div>
+           
             <div className="gridMenu">
                 {products}
             </div>

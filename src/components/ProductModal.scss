@@ -1,16 +1,20 @@
 .productModalContainer{
+
+    padding-left: 30px;
+    padding-right: 30px;
     img{
         width: 100%;
         //object-fit: cover;
         //aspect-ratio: 1/1;
         display: block;
+        
     }
 
     .imgClicked{
         border-radius: 9999px;
         // border: 2px solid rgb(255, 200, 0);
         //box-shadow: 0 0 10px 5px rgba(255, 200, 0);
-        outline: 10px solid rgb(255, 200, 0);
+        outline: 5px solid rgb(255, 200, 0);
     }
 
     .imgNotClicked{

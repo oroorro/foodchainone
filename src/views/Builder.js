@@ -6,6 +6,7 @@ import OrderList from '../components/OrderList';
 import { useLocation } from 'react-router-dom';
 import { HiMiniArrowSmallLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 import './Builder.scss';
 
@@ -22,6 +23,12 @@ export default function Builder(){
     const queue = useSelector(state => state.slice.testObj.testThree);
     console.log(queue);
     */
+
+    //scroll to top when loaded
+    useEffect(()=>{
+        window.scrollTo({top: 0, left: 0})
+    },[])
+
 
     const location = useLocation(); 
 
@@ -70,7 +77,7 @@ export default function Builder(){
                     <div className='orderContainer'>
                         <OrderList/>
                     </div>
-                    //two styles based on orderQueue
+                  
                     <button className={`itemInBag` + (orderQueue.length === 0 ? 'DoesNotExist' : 'Exist')}>Add to bag</button>
                 </div>
             </div>

@@ -8,11 +8,18 @@
         display: flex;
         flex-direction: column;
         
-
-        .menuSectionTitle{
+        .menuSectionWrapper{
             border-bottom: 1px solid black;
             padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            .menuSectionTitle{
+                display: inline-block;
+                
+            }
         }
+
+        
 
         .gridMenu{
             @media screen and (min-width: 768px){

@@ -4,7 +4,7 @@ header{
     display: flex;
     align-items: flex-end;
     gap: 150px;
-    justify-content: center; 
+    // justify-content: center; 
     border-bottom: 1px solid black;
 
     >ul{
@@ -17,6 +17,7 @@ header{
             position: relative;
             color: black;
             padding: 0.2em 0;
+            font-size:large;
         }
         >li>a::after {
             content: '';
@@ -38,7 +39,7 @@ header{
     }
 
     .rightMenu{
-        display: flex;
+        display: none;
         gap: 10px;
         align-items: flex-end;
     

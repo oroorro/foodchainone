@@ -184,7 +184,7 @@ export default function ProductModal(props){
 
     }
 
-    //used in builder.js 
+    //used in builder.js, /build 
     if(props.build){
         return(
             <div className="productModalContainer">
@@ -202,7 +202,7 @@ export default function ProductModal(props){
 
                 <div>
                     <p>{props.data.title}</p>
-                    <p>{props.data.calorie + " "}Cal</p>
+                    <p>{props.data.calorie}Cal</p>
                 </div>
               
                 <div>
@@ -217,7 +217,7 @@ export default function ProductModal(props){
         )
     }
 
-    //used in 
+    //used in /menu 
     else{
         return(
             <div className="productModalContainer">
@@ -227,8 +227,8 @@ export default function ProductModal(props){
                         navigate(`/builder/${props.data.title.replace(/\s/g, '-')}`,  {state: props.data.title.replace(/\s/g, '-')}))}
                 />
                 <h2>{props.data.title}</h2>
-                <p>{props.data.calorie}</p>
-                <p>{props.data.description}</p>
+                <p style={{fontSize: "large"}}>{props.data.calorie} Cal</p>
+                <p style={{fontSize: "large"}}>{props.data.description}</p>
             </div>
         )
     }

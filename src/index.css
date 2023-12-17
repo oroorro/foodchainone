@@ -1,5 +1,6 @@
 :root{
-  --lightblue:#3ef3d0;
+  --lightblue:#b3f5f1;
+  --backgroundColor: #fffbee;
 }
 html {
   scroll-behavior: smooth;
