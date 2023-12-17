@@ -1,16 +1,18 @@
 import ProductModal from "./ProductModal";
 import './MenuSection.scss';
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
 // 
-// This compnents holds a title, and it's products by givings props to ProductModal.js
+// Menu.js: View has <MenuSection> 
+// This components holds a category title, and it's child component products <ProductModal> will be displaying
+// the img, title, calories and description
 // @props 
 //      .build:Bool, flag to indicate 
-//      .title:String, Key of data.build 
+//      .title:String, Key of data.build, which represents the category 
 //      .data:Array[Object], 
 //      .rule:Object,{limit:Number, portion:String}
 // 
-export default function MenuSection(props){
+const MenuSection = forwardRef (function MenuSection(props, refs){
 
 
 
@@ -91,7 +93,8 @@ export default function MenuSection(props){
 
     return(
         <div className="menuSectionDiv">
-        <section id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
+        
+        <section  id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
             <h3 className="menuSectionTitle"> {props.title}</h3>
             <div className="gridMenu">
                 {products}
@@ -99,4 +102,6 @@ export default function MenuSection(props){
         </section>
         </div>
     )
-} 
+})
+
+export default MenuSection;

@@ -29,7 +29,7 @@ export default function OrderList(){
     
         //console.log("orderList:", order.title, order.category),
         <div className='order'>
-            <img src={require(`../images/build/${order.category}/${order.title.toLowerCase().replace(/\s/g, '_')}-220606.avif`)}/>
+            <img src={require(`../images/build/${order.category}/${order.title.toLowerCase().replace(/\s/g, '_')}.png`)}/>
             <p>{order.title}</p>
             <button onClick={()=>deleteOrder(index, order.title, order.category)}><IoIosCloseCircleOutline size={25}/></button>
         </div>

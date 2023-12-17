@@ -7,18 +7,22 @@ import { useNavigate } from "react-router-dom";
 import CustomAlert from './CustomAlert';
 
 
-
-
-
-
 /**
  * MenuSection has <ProductModal>
+ * ProductModal displays information of each product with it's image,title
+ * calories and description. It also leads into /build/${productTitle} 
+ * when clicked on the image.
+ * 
+ * build:Bool will determine if ProductModal will be used in Menu.js; View
+ * or Build.js; View where ProductModal has an ability to set numbers of clicked on it's image 
+ * 
+ * 
  * @param props represents 
  //                 .rule: Object:{limit:String, portion:String}  
  //                 .selectedItem:useState  
  //                 .setSelectedItem:setState
- //                 .build: Bool
- //                 .imgTitle:String
+ //                 .build: Bool : False -> will be used in Menu.js 
+ //                 .imgTitle:String, represents the category of product
  //                 .data: Object:{title:String, calorie:Number, imageSrc:String
  *                  .reachedLimitFlag:Bool , indication to tell if the category of this product has reached a limit of selection.
  */
@@ -180,6 +184,7 @@ export default function ProductModal(props){
 
     }
 
+    //used in builder.js 
     if(props.build){
         return(
             <div className="productModalContainer">
@@ -211,6 +216,8 @@ export default function ProductModal(props){
             </div>
         )
     }
+
+    //used in 
     else{
         return(
             <div className="productModalContainer">

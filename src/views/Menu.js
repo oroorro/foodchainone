@@ -2,18 +2,22 @@ import data from '../tempDataBase/data.json'
 import Header from '../components/Header';
 import MenuSection from '../components/MenuSection';
 import './Menu.scss';
-import {useState,useRef} from 'react';
+import {useState,useRef,forwardRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 export default function Menu(){
 
+    const menuSectionRef = useRef(null);
+
+    console.log("menuSectionRef", menuSectionRef);
+
     const navRef = useRef(null);
     const [isFix, setFix] = useState(false);
 
-    //get bowls, pita, drknk, kidmenu
+    //get bowls, drink, kidmenu
     const menu = Object.keys(data.product).map((productName)=>(
-        <MenuSection build={false} title={productName} data={data.product[productName]}/>
+        <MenuSection ref={menuSectionRef} build={false} title={productName} data={data.product[productName]}/>
     ))
 
     function setFixed(){
@@ -25,9 +29,11 @@ export default function Menu(){
             //document.getElementById("root").addClassList();
             document.getElementById("root").style.paddingTop = navRef.offsetHeight;
             setFix(true);
+            window.removeEventListener("scroll", setFixed);
 
         }else{
             setFix(false);
+            window.removeEventListener("scroll", setFixed);
         }
         
     }
@@ -44,7 +50,7 @@ export default function Menu(){
        
         <nav ref={navRef}  className={isFix ?'menuNavFixed' : `menuNav`}>
             <ul>
-                <li><a href={"#BOWLSection"}>Bowls</a></li>
+                {/* <li><a href={"#BOWLSection"}>Bowls</a></li> */}
                 <li><Link 
                     activeClass="active" 
                     to="BOWLSection" 
@@ -57,7 +63,7 @@ export default function Menu(){
                     Bowls
                     </Link>
                 </li>
-                <li><a href={"#PITASection"}>Pitas</a></li>
+                {/* <li><a href={"#PITASection"}>Pitas</a></li> */}
                 <li>
                     <Link 
                         activeClass="active" 
@@ -72,7 +78,7 @@ export default function Menu(){
                     </Link>
                 
                 </li>
-                <li><a href={"#KIDMENUSection"}>Kid's meal</a></li>
+                {/* <li><a href={"#KIDMENUSection"}>Kid's meal</a></li> */}
                 <li>
                 <Link 
                     activeClass="active" 

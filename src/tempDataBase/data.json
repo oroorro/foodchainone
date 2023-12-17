@@ -6,13 +6,13 @@
             "title":"Feels Good to Be Fiery",
             "description": "Our Sweet + Spicy Chicken Pita is back for a limited time!",
             "buttonText": "Order now",
-            "imageSrc": "01_WebHH_FA23_Pita_Comp_1620x1620__1_.avif"
+            "imageSrc": "holding.png"
         },
         {
             "title":"Sweet, fiery satisfaction",
             "description": "New Spicy Falafel lights up every forkful with fire-roasted jalapeños, harissa + fresh herbs.",
             "buttonText": "Let’s get bold",
-            "imageSrc": "01_WebHH_SP234_SpiceyFalafel.avif"
+            "imageSrc": "fork.png"
         },
         {
             "title": "DOUSE ON EVERYTHING, REGRET NOTHING",
@@ -46,44 +46,86 @@
 
         "BALSAMIC DATE CHICKEN":
         {
-            "title": "BALSAMIC DATE CHICKEN",
+            "title": "BALSAMIC CHICKEN",
             "calorie": 645, 
-            "imageSrc": "balsamic-date-chicken_20231023_web.avif",
+            "imageSrc": "balsamic_chicken.png",
             "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
         },
-        "MARKET SPICE":
+        "MARKET SALAD":
         {
-            "title": "MARKET SPICE",
+            "title": "MARKET SALAD",
             "calorie": 945, 
-            "imageSrc": "harissa_avocado-220606-web.avif",
-            "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, skhug, garlic dressing, more."
+            "imageSrc": "market_salad.png",
+            "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, garlic dressing, more."
         },
-        "HARISSA AVOCADO":
+        "SRIRRACHA  AVOCADO":
         {
-            "title": "HARISSA AVOCADO",
+            "title": "SRIRRACHA AVOCADO",
             "calorie": 845, 
-            "imageSrc": "market-spice-bowl_20231023_web.avif",
-            "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
+            "imageSrc": "srirracha_avocado.png",
+            "description": "Harissa honey chicken + hot harissa vinaigrette, hummus, corn, avocado, rice, SplendidGreens, more."
         }
     },
 
 
     "menu":{
-        "BALSAMIC DATE CHICKEN":{
-            
+        "MARKET SALAD":{
+
+            "price": 8.45,
+            "calorie": 945, 
+            "rule":{
                 "GREENS":{
-                    "limit": 2,
-                    "portion": "half"
-                    
+                "limit": 2,
+                "portion": "half"
+                
                 },
                 "DIPS + SPREADS":{
                     "limit": 3,
                     "portion": "full"
                 }
+            }
            
         },
-        "HARISSA AVOCADO":{
+
+        "SRIRRACHA AVOCADO":{
+            "price": 9.45,
+            "calorie": 845,
+            "rule":{
+                "GREENS":{
+                "limit": 1,
+                "portion": "full"
+                
+                },
+                "DIPS + SPREADS":{
+                    "limit": 3,
+                    "portion": "full"
+                }
+            }
+        },
+
+        "GREEK CAESAR":{
+
+            "price": 11.30,
+            "calorie": 600,
+            "rule":{
+                "GREENS":{
+                    "limit": 3,
+                    "portion": "full"
+                    
+                },
+                "DIPS + SPREADS":{
+                    "limit": 2,
+                    "portion": "full"
+                }
+            }
             
+
+        },
+
+        "BALSAMIC CHICKEN":{
+            "price": 9.45,
+            "calorie": 645,
+            "rule":{
                 "GREENS":{
                     "limit": 2,
                     "portion": "full",
@@ -92,115 +134,118 @@
                 "DIPS + SPREADS":{
                     "limit": 2
                 }
+            }
+        },
+
+        "TAHINI SALAD":{
+            "price": 8.45,
+            "calorie": 550,
+            "rule":{
+                "GREENS":{
+                    "limit": 2,
+                    "portion": "full",
+                    "default": "SuperGreens"
+                },
+                "DIPS + SPREADS":{
+                    "limit": 2
+                }
+            }
             
+        },
+
+        "CHICKEN AND RICE":{
+            "price": 9.45,
+            "calorie": 750, 
+            "rule":{
+                "GREENS":{
+                    "limit": 1,
+                    "portion": "full",
+                    "default": "SuperGreens"
+                },
+                "DIPS + SPREADS":{
+                    "limit": 2
+                }
+            }
+            
+        
+        },
+
+        "SALAD BOWL":{
+            "price": 10.45,
+            "calorie": "360-1495", 
+            "rule":{
+                "GREENS":{
+                    "limit": 3,
+                    "portion": "full",
+                    "default": "SuperGreens"
+                },
+                "DIPS + SPREADS":{
+                    "limit": 3
+                }
+            }
+
+            
+
         }
+
     },
 
 
     "product":{
         "BOWL":
         [
+            
             {
-                "title": "BALSAMIC DATE CHICKEN",
-                "calorie": 645, 
-                "imageSrc": "balsamic-date-chicken_20231023_web.avif",
-                "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
-            },
-           
-            {
-                "title": "MARKET SPICE",
+                "title": "MARKET SALAD",
                 "calorie": 945, 
-                "imageSrc": "harissa_avocado-220606-web.avif",
+                "imageSrc": "market_salad.png",
                 "description": "Spicy falafel, fiery broccoli, hummus, tzatziki, pickled onions, romaine, rice, skhug, garlic dressing, more."
             },
            
             {
-                "title": "HARISSA AVOCADO",
+                "title": "SRIRRACHA AVOCADO",
                 "calorie": 845, 
-                "imageSrc": "market-spice-bowl_20231023_web.avif",
+                "imageSrc": "srirracha_avocado.png",
                 "description": "Harissa honey chicken + hot harissa vinaigrette. Crazy Feta®, hummus, corn, avocado, rice, SuperGreens, more."
             },
            
             {
-                "title": "Greek Salad",
+                "title": "GREEK CAESAR",
                 "calorie": 600, 
-                "imageSrc": "chicken_rightrice-220606-web.avif",
+                "imageSrc": "greek_caesar.png",
                 "description": "Grilled chicken, hummus, tzatziki, feta, cucumber, tomato, Kalamata olives, romaine, arugula, and vinaigrette."
+            },
+
+            {
+                "title": "BALSAMIC CHICKEN",
+                "calorie": 645, 
+                "imageSrc": "balsamic_chicken.png",
+                "description": "Grilled chicken, eggplant dip, red pepper hummus, corn, brown rice, spinach, balsamic date vinaigrette, more."
             },
             
             {
-                "title": "TAHINI CAESAR",
+                "title": "TAHINI SALAD",
                 "calorie": 550, 
-                "imageSrc": "tahini_caesar-220606-web.avif",
-                "description": "Grilled chicken, hummus, pita crisps, pickled onions, feta, romaine, arugula, Tahini Caesar dressing."
+                "imageSrc": "tahini_salad.png",
+                "description": "Grilled chicken, hummus, pita crisps, pickled onions, feta, romaine, arugula, Tahini dressing."
             },
     
             {
-                "title": "CHICKEN + RIGHTRICE®",
+                "title": "CHICKEN AND RICE",
                 "calorie": 750, 
-                "imageSrc": "chicken_rightrice-220606-web.avif",
-                "description": "Built on a base of high-protein RightRice® with grilled chicken, tzatziki, hummus, feta, tomato, arugula, more."
+                "imageSrc": "chicken_and_rice.png",
+                "description": "Piled on top of high-protein rice, you've got grilled chicken, tzatziki, hummus, feta, tomatoes, and arugula."
             },
+
             {
-                "title": "GREENS + GRAINS BOWL",
+                "title": "SALAD BOWL",
                 "calorie": "360-1495", 
-                "imageSrc": "byo-greens-grains-bowl_20220927_web.avif",
-                "description": "Mix and match your favorite greens and grains to build a bowl just the way you like it."
-            },
-            {
-                "title": "GREENS + GRAINS BOWL",
-                "calorie": "360-1495", 
-                "imageSrc": "byo-salad-bowl_20220927_web.avif",
-                "description": "Mix an"
-            },
-            {
-                "title": "GREENS + GRAINS BOWL",
-                "calorie": "360-1495", 
-                "imageSrc": "byo-grains-bowl_20220927_web.avif",
-                "description": "Mix an"
+                "imageSrc": "salad_bowl.png",
+                "description": "Combine your preferred greens and grains to create a bowl exactly to your taste."
             }
+           
         ],
     
-        "PITA":
-        [
-            {
-                "title":"SWEET + SPICY CHICKEN",
-                "calorie": 740,
-                "imageSrc": "spicy_lamb_meatball-220606-web.avif",
-                "description": "Harissa honey chicken meets balsamic date vinaigrette. Plus, tzatziki, tomato + onion, pickles, romaine."
-                
-            },
-            {
-                "title": "CRISPY FALAFEL",
-                "calorie": 955,
-                "imageSrc": "crispy_falafel-220606-web.avif",
-                "description": "Falafel, hummus, roasted eggplant, pickles, cabbage slaw, tomato + onion, garlic dressing, skhug."
-            },
-            {
-                "title": "SPICY CHICKEN + AVOCADO",
-                "calorie": 1030,
-                "imageSrc": "spicy_chicken_avocado-220606-web.avif",
-                "description": "Harissa honey chicken, Crazy Feta®, hummus, avocado, pickles, corn, pickled onions, hot harissa vinaigrette."
-            },
-            {
-                "title":"SPICY LAMB MEATBALL",
-                "calorie": 865,
-                "imageSrc": "sweet-n-spicy-chicken_20231023_web.avif",
-                "description":"Lamb meatballs, hummus, tomato + cucumber, pickled onions, cabbage slaw, pickles, garlic dressing, skhug."
-            },
-            {
-                "title":"GREEK CHICKEN",
-                "calorie":895,
-                "imageSrc":"greek_chicken-220606-web.avif",
-                "description": "Grilled chicken, hummus, tzatziki, pickles, tomato + onion, olives, feta, shredded romaine, Greek Vinaigrette."
-            },
-            {
-                "title":"PITA",
-                "calorie": "540-1610",
-                "imageSrc": "byo-pita_220606_web.avif",
-                "description": "Fill our fluffy and perfectly chewy pita with your unique combo of ingredients. Made with sprouted grains."
-            }
-        ],
         
         "DRINK":
         [
@@ -242,7 +287,7 @@
             {
                 "title": "KID'S MILK",
                 "calorie": "505-1210",
-                "imageSrc": "kids-meal_220606_web.avif",
+                "imageSrc": "kids-menu.png",
                 "description": "A mini version of our build-your-own pita with a side of pita chips or carrots sticks. Choose milk or juice."
             }
         ]
@@ -254,62 +299,62 @@
             {
                 "title": "Arugula",
                 "calorie": 20,
-                "imageSrc": "arugula-220606.avif"
+                "imageSrc": "arugula.png"
             },
             {
-                "title": "SuperGreens",
+                "title": "MarvelGreens",
                 "calorie": 40,
-                "imageSrc": "super_greens-220606.avif"
+                "imageSrc": "marvelgreens.png"
             },
             {
-                "title": "Baby Spinach",
+                "title": "Spinach",
                 "calorie": 20,
-                "imageSrc": "baby_spinach-220606.avif"
+                "imageSrc": "spinach.png"
             },
             {
                 "title": "Romaine",
                 "calorie": 20,
-                "imageSrc": "romaine-220606.avif"
+                "imageSrc": "romaine.png"
             },
             {
-                "title": "SplendidGreens®",
+                "title": "IncredibleGreens",
                 "calorie": 20,
-                "imageSrc": "splendid_greens-220606.avif"
+                "imageSrc": "incrediblegreens.png"
             }
         ],
         
 
-        "DIPS + SPREADS":
+        "SPREADS":
         [
             {
-                "title": "Tzatziki",
+                "title": "Creamy Tzatziki",
                 "calorie": 35,
-                "imageSrc": "tzatziki-220606.avif"
+                "imageSrc": "creamy_tzatziki.png"
             },
             {
                 "title": "Traditional Hummus",
                 "calorie": 45,
-                "imageSrc": "hummus-220606.avif"
+                "imageSrc": "traditional_hummus.png"
             },
             {
-                "title": "Crazy Feta",
+                "title": "Amazing Feta",
                 "calorie": 70,
-                "imageSrc": "crazy_feta-220606.avif"
+                "imageSrc": "amazing_feta.png"
             },
             {
-                "title": "Harissa",
+                "title": "Spicy Harissa",
                 "calorie": 70,
-                "imageSrc": "harissa-220606.avif"
+                "imageSrc": "spicy_harissa.png"
             },
             {
                 "title": "Red Pepper Hummus",
                 "calorie": 30,
-                "imageSrc": "red_pepper_hummus-220606.avif"
+                "imageSrc": "red_pepper_hummus.png"
             },
             {
-                "title": "Roasted Eggplant Dip",
+                "title": "Roasted Eggplant",
                 "calorie": 50,
-                "imageSrc": "roasted_eggplant_dip-220606.avif"
+                "imageSrc": "roasted_eggplant.png"
             }
         ]
 

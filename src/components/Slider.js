@@ -35,10 +35,10 @@ export default function Slider(props){
                     <div>
                         <div className="buttonContainer">
                             <button onClick={()=>handleLeft()}>
-                                <BsArrowLeftCircle/>
+                                <BsArrowLeftCircle size={40}/>
                             </button>
                             <button onClick={()=>handleRight()}>
-                                <BsArrowRightCircle/>
+                                <BsArrowRightCircle  size={40}/>
                             </button>
                         </div>
                     </div>

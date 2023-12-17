@@ -56,9 +56,23 @@
                 display: block;
             }
 
-            .buttonContainer{
-                display: flex;
+            >div{
+
+                position: relative;
+                left: -40%;
+                .buttonContainer{
+                    display: flex;
+                    gap: 20px;
+                    >button{
+                        width: 40px;
+                        height: 40px;
+                        background: none;
+                        border:none;
+                        cursor: pointer;
+                    }
+                }
             }
+            
         }
 
 

@@ -13,6 +13,16 @@
                 margin-top: 8px;
             }
         }
+        .FooterListContainer.SOCIAL{
+            margin-top: 0px;
+        }
+
+        //Social media section needs less space between logo and header
+        >:nth-child(4){
+            >:nth-child(3){
+                margin-bottom: 1px;
+            }
+        }
     }
 }
 

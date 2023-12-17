@@ -10,6 +10,9 @@ import { useNavigate } from "react-router-dom";
 import './Builder.scss';
 
 //represents /build page 
+//gets initated when user click on <img> in <ProductModal>
+//passed state from <ProductModal>'s <img> will be product's title that has '-' replaced for space,whitespace
+
 export default function Builder(){
 
     /*
@@ -39,9 +42,12 @@ export default function Builder(){
     const menu = Object.keys(data.build).map((categoryName)=>(
         //@title:String, Key of data.build 
         //@data:Array[Object], value of data.build[categoryName:String]
-        //@rule:Object:{limit:String, portion:String}
-        //uses current route address with '-' exclusion.
-        <MenuSection build={true} title={categoryName} data={data.build[categoryName]} rule={data.menu[location.state.replace(/[-]/g, " ")][categoryName]}/>
+        //@rule:Object:{limit:String, portion:String} , rule is getting accessed by using location.state, the product title replaced with '-'
+        //now it is accessing rule in data.build after removing '-'  
+        //uses current route address with '-' exclusion.        
+        //missing on rule> error reason 
+        //             
+        <MenuSection build={true} title={categoryName} data={data.build[categoryName]} rule={data.menu[location.state.replace(/[-]/g, " ")]["rule"][categoryName]}/>
     ))
     return(
         <div>
@@ -57,8 +63,8 @@ export default function Builder(){
                     <a onClick={()=>navigate(`/menu`)}><HiMiniArrowSmallLeft size={20}/>Back to Menu</a>
                     <h1>{location.state.replace(/[-]/g, " ")}</h1>
                     <div className='orderInfoWrapper'>
-                        <span>$10.95</span>
-                        <span>222 Cal</span>
+                        <span>${data.menu[location.state.replace(/[-]/g, " ")]["price"]}</span>
+                        <span>{data.menu[location.state.replace(/[-]/g, " ")]["calorie"]}Cal</span>
                     </div>
 
                     <div className='orderContainer'>
