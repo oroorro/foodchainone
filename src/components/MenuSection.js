@@ -97,7 +97,7 @@ const MenuSection = forwardRef (function MenuSection(props, refs){
         <section  id={`${props.title}Section`} className={`${props.title}Section menuSection`}>
             <div className="menuSectionWrapper">
                 <h3 className="menuSectionTitle"> {props.title}</h3>
-
+                {props.build && <span>can select up to {props.rule.limit}</span>  }
             </div>
            
             <div className="gridMenu">
