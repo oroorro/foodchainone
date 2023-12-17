@@ -1,10 +1,12 @@
 .FooterContainer{
     display: flex;
     justify-content: center;
+    
+
     .FooterSection{
         display: flex;
         flex-direction: row;
-        gap: 30px;
+        gap: 100px;
 
         .FooterListContainer{
             list-style: none;

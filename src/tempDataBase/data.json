@@ -1,17 +1,21 @@
 {
 
+
+   
+
+
     "homeSliderData": 
     [
         {
-            "title":"Feels Good to Be Fiery",
-            "description": "Our Sweet + Spicy Chicken Pita is back for a limited time!",
+            "title":"Enjoy the Thrill of Spice",
+            "description": "Our Delicious Spicy Chicken Pita Returns for a Limited Time!",
             "buttonText": "Order now",
             "imageSrc": "holding.png"
         },
         {
             "title":"Sweet, fiery satisfaction",
-            "description": "New Spicy Falafel lights up every forkful with fire-roasted jalapeños, harissa + fresh herbs.",
-            "buttonText": "Let’s get bold",
+            "description": "Experience the Excitement in Every Bite with Our New Spicy Falafel, Featuring Fire-Roasted Jalapeños, Harissa, and Fresh Herbs.",
+            "buttonText": "Let’s get fiery",
             "imageSrc": "fork.png"
         },
         {

@@ -5,6 +5,7 @@ import './Menu.scss';
 import {useState,useRef,forwardRef, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import Footer from '../components/Footer';
 
 export default function Menu(){
 
@@ -126,6 +127,7 @@ export default function Menu(){
         </nav>
       
         {menu}
+        <Footer/>
         </>
     );
 }
