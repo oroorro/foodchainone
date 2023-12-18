@@ -1,4 +1,6 @@
 import GoogleMapReact from 'google-map-react';
+const data = require("../config/GoogleMapApi.json");
+
 
 export default function OrderNow(){
     const defaultProps = {
@@ -32,7 +34,7 @@ export default function OrderNow(){
       // Important! Always set the container height explicitly
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyB74UFHQFp_BRWdAuLvfo13IfmyqKusYyM" }}
+          bootstrapURLKeys={{ key: data.key }}
           yesIWantToUseGoogleMapApiInternals
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
