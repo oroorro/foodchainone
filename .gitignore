@@ -1,5 +1,5 @@
 #config
-/foodchainone/src/config
+/foodchainone/src/config/
 
 # dependencies
 /node_modules
